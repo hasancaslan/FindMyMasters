@@ -1,3 +1,24 @@
-PODFILE CHECKSUM: ed14c635da54da0e36bdd647078caec01244e11b
+PODS:
+  - JGProgressHUD (2.2)
+  - PKHUD (5.3.0)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - JGProgressHUD
+  - PKHUD
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - JGProgressHUD
+    - PKHUD
+    - SnapKit
+
+SPEC CHECKSUMS:
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 8086b7e2f1faa1753e59916cb49bef74d1263ee6
 
 COCOAPODS: 1.10.1

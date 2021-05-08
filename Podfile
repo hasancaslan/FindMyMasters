@@ -6,6 +6,20 @@ target 'MastersPortal' do
   use_frameworks!
 
   # Pods for MastersPortal
+  # autolayout
+  pod 'SnapKit'
+
+  # activity indicator
+  pod 'JGProgressHUD'
+  pod 'PKHUD'
+
+  # custom UI
+  pod 'Cards'
+  pod 'SwiftMessages'
+  pod 'BulletinBoard'
+
+  # animations
+  pod 'ViewAnimator'
 
 end
 

@@ -14,6 +14,12 @@
 		F36C541226473B12001C4526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F36C541026473B12001C4526 /* Main.storyboard */; };
 		F36C541426473B17001C4526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F36C541326473B17001C4526 /* Assets.xcassets */; };
 		F36C541726473B17001C4526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F36C541526473B17001C4526 /* LaunchScreen.storyboard */; };
+		F36C542426475594001C4526 /* BartyCrouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C542326475594001C4526 /* BartyCrouch.swift */; };
+		F36C5427264755B6001C4526 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F36C5429264755B6001C4526 /* Localizable.strings */; };
+		F36C542E264755D5001C4526 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C542A264755D5001C4526 /* XCAssets+Generated.swift */; };
+		F36C542F264755D5001C4526 /* IB-Scenes+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C542B264755D5001C4526 /* IB-Scenes+Generated.swift */; };
+		F36C5430264755D5001C4526 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C542C264755D5001C4526 /* Strings+Generated.swift */; };
+		F36C5431264755D5001C4526 /* IB-Segues+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C542D264755D5001C4526 /* IB-Segues+Generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		F36C541326473B17001C4526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F36C541626473B17001C4526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F36C541826473B17001C4526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F36C542326475594001C4526 /* BartyCrouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BartyCrouch.swift; sourceTree = "<group>"; };
+		F36C5428264755B6001C4526 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F36C542A264755D5001C4526 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		F36C542B264755D5001C4526 /* IB-Scenes+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IB-Scenes+Generated.swift"; sourceTree = "<group>"; };
+		F36C542C264755D5001C4526 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		F36C542D264755D5001C4526 /* IB-Segues+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IB-Segues+Generated.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +103,7 @@
 		F36C541E264740DF001C4526 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F36C542226475587001C4526 /* Localization */,
 				F36C540A26473B12001C4526 /* AppDelegate.swift */,
 				F36C540C26473B12001C4526 /* SceneDelegate.swift */,
 				F36C541326473B17001C4526 /* Assets.xcassets */,
@@ -110,6 +123,10 @@
 		F36C5420264740EA001C4526 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				F36C542B264755D5001C4526 /* IB-Scenes+Generated.swift */,
+				F36C542D264755D5001C4526 /* IB-Segues+Generated.swift */,
+				F36C542C264755D5001C4526 /* Strings+Generated.swift */,
+				F36C542A264755D5001C4526 /* XCAssets+Generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -123,6 +140,15 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		F36C542226475587001C4526 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				F36C542326475594001C4526 /* BartyCrouch.swift */,
+				F36C5429264755B6001C4526 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,6 +160,7 @@
 				F36C540326473B12001C4526 /* Sources */,
 				F36C540426473B12001C4526 /* Frameworks */,
 				F36C540526473B12001C4526 /* Resources */,
+				BEB198FF3C04841A92849CBE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -182,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36C541726473B17001C4526 /* LaunchScreen.storyboard in Resources */,
+				F36C5427264755B6001C4526 /* Localizable.strings in Resources */,
 				F36C541426473B17001C4526 /* Assets.xcassets in Resources */,
 				F36C541226473B12001C4526 /* Main.storyboard in Resources */,
 			);
@@ -190,6 +218,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BEB198FF3C04841A92849CBE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MastersPortal/Pods-MastersPortal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MastersPortal/Pods-MastersPortal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MastersPortal/Pods-MastersPortal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E26E795751E43248F967AE22 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,9 +264,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F36C542E264755D5001C4526 /* XCAssets+Generated.swift in Sources */,
 				F36C540F26473B12001C4526 /* ViewController.swift in Sources */,
+				F36C5431264755D5001C4526 /* IB-Segues+Generated.swift in Sources */,
 				F36C540B26473B12001C4526 /* AppDelegate.swift in Sources */,
+				F36C542426475594001C4526 /* BartyCrouch.swift in Sources */,
+				F36C5430264755D5001C4526 /* Strings+Generated.swift in Sources */,
 				F36C540D26473B12001C4526 /* SceneDelegate.swift in Sources */,
+				F36C542F264755D5001C4526 /* IB-Scenes+Generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +292,14 @@
 				F36C541626473B17001C4526 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F36C5429264755B6001C4526 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F36C5428264755B6001C4526 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
