@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D491E0E34E74A963A4E6C51 /* Pods_MastersPortal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6515EA2DEE80100191E898C /* Pods_MastersPortal.framework */; };
 		F36C540B26473B12001C4526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C540A26473B12001C4526 /* AppDelegate.swift */; };
 		F36C540D26473B12001C4526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C540C26473B12001C4526 /* SceneDelegate.swift */; };
 		F36C540F26473B12001C4526 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C540E26473B12001C4526 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13F0DF26CAA92C172F0C0AB5 /* Pods-MastersPortal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MastersPortal.release.xcconfig"; path = "Target Support Files/Pods-MastersPortal/Pods-MastersPortal.release.xcconfig"; sourceTree = "<group>"; };
+		32AE47F150A5AC7BBD46E732 /* Pods-MastersPortal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MastersPortal.debug.xcconfig"; path = "Target Support Files/Pods-MastersPortal/Pods-MastersPortal.debug.xcconfig"; sourceTree = "<group>"; };
+		C6515EA2DEE80100191E898C /* Pods_MastersPortal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MastersPortal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36C540726473B12001C4526 /* MastersPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MastersPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36C540A26473B12001C4526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36C540C26473B12001C4526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D491E0E34E74A963A4E6C51 /* Pods_MastersPortal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0DC398D1DF7D00AF81ACC11 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32AE47F150A5AC7BBD46E732 /* Pods-MastersPortal.debug.xcconfig */,
+				13F0DF26CAA92C172F0C0AB5 /* Pods-MastersPortal.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A2383CC799DBE9099EC8C1FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6515EA2DEE80100191E898C /* Pods_MastersPortal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F36C53FE26473B12001C4526 = {
 			isa = PBXGroup;
 			children = (
 				F36C540926473B12001C4526 /* MastersPortal */,
 				F36C540826473B12001C4526 /* Products */,
+				A0DC398D1DF7D00AF81ACC11 /* Pods */,
+				A2383CC799DBE9099EC8C1FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +80,47 @@
 		F36C540926473B12001C4526 /* MastersPortal */ = {
 			isa = PBXGroup;
 			children = (
-				F36C540A26473B12001C4526 /* AppDelegate.swift */,
-				F36C540C26473B12001C4526 /* SceneDelegate.swift */,
+				F36C54212647410B001C4526 /* Storyboards */,
+				F36C541F264740E6001C4526 /* Model */,
+				F36C541E264740DF001C4526 /* Resources */,
 				F36C540E26473B12001C4526 /* ViewController.swift */,
-				F36C541026473B12001C4526 /* Main.storyboard */,
-				F36C541326473B17001C4526 /* Assets.xcassets */,
-				F36C541526473B17001C4526 /* LaunchScreen.storyboard */,
-				F36C541826473B17001C4526 /* Info.plist */,
 			);
 			path = MastersPortal;
+			sourceTree = "<group>";
+		};
+		F36C541E264740DF001C4526 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F36C540A26473B12001C4526 /* AppDelegate.swift */,
+				F36C540C26473B12001C4526 /* SceneDelegate.swift */,
+				F36C541326473B17001C4526 /* Assets.xcassets */,
+				F36C541826473B17001C4526 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F36C541F264740E6001C4526 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F36C5420264740EA001C4526 /* Generated */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F36C5420264740EA001C4526 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		F36C54212647410B001C4526 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F36C541026473B12001C4526 /* Main.storyboard */,
+				F36C541526473B17001C4526 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +130,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F36C541B26473B17001C4526 /* Build configuration list for PBXNativeTarget "MastersPortal" */;
 			buildPhases = (
+				E26E795751E43248F967AE22 /* [CP] Check Pods Manifest.lock */,
 				F36C540326473B12001C4526 /* Sources */,
 				F36C540426473B12001C4526 /* Frameworks */,
 				F36C540526473B12001C4526 /* Resources */,
@@ -131,6 +188,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E26E795751E43248F967AE22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MastersPortal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F36C540326473B12001C4526 /* Sources */ = {
@@ -283,17 +365,18 @@
 		};
 		F36C541C26473B17001C4526 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32AE47F150A5AC7BBD46E732 /* Pods-MastersPortal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WXV9WLK4Q4;
-				INFOPLIST_FILE = MastersPortal/Info.plist;
+				INFOPLIST_FILE = MastersPortal/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pbstudios.MastersPortal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hasancaslan.MastersPortal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,17 +385,18 @@
 		};
 		F36C541D26473B17001C4526 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13F0DF26CAA92C172F0C0AB5 /* Pods-MastersPortal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WXV9WLK4Q4;
-				INFOPLIST_FILE = MastersPortal/Info.plist;
+				INFOPLIST_FILE = MastersPortal/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pbstudios.MastersPortal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hasancaslan.MastersPortal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
