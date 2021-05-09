@@ -3,6 +3,7 @@
 
 // swiftlint:disable sorted_imports
 import Foundation
+import AnimatedTabBar
 import UIKit
 
 // swiftlint:disable superfluous_disable_command
@@ -12,6 +13,20 @@ import UIKit
 
 // swiftlint:disable explicit_type_interface identifier_name line_length type_body_length type_name
 internal enum StoryboardScene {
+  internal enum Decide: StoryboardType {
+    internal static let storyboardName = "Decide"
+
+    internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Decide.self)
+
+    internal static let decideViewController = SceneType<DecideViewController>(storyboard: Decide.self, identifier: "DecideViewController")
+  }
+  internal enum Explore: StoryboardType {
+    internal static let storyboardName = "Explore"
+
+    internal static let initialScene = InitialSceneType<UIKit.UINavigationController>(storyboard: Explore.self)
+
+    internal static let exploreViewController = SceneType<ExploreViewController>(storyboard: Explore.self, identifier: "ExploreViewController")
+  }
   internal enum LaunchScreen: StoryboardType {
     internal static let storyboardName = "LaunchScreen"
 
@@ -20,7 +35,7 @@ internal enum StoryboardScene {
   internal enum Main: StoryboardType {
     internal static let storyboardName = "Main"
 
-    internal static let initialScene = InitialSceneType<ViewController>(storyboard: Main.self)
+    internal static let initialScene = InitialSceneType<AnimatedTabBar.AnimatedTabBarController>(storyboard: Main.self)
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name

@@ -3,6 +3,7 @@
 
 // swiftlint:disable sorted_imports
 import Foundation
+import AnimatedTabBar
 import UIKit
 
 // swiftlint:disable superfluous_disable_command

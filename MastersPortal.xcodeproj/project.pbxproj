@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0D491E0E34E74A963A4E6C51 /* Pods_MastersPortal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6515EA2DEE80100191E898C /* Pods_MastersPortal.framework */; };
 		F36C540B26473B12001C4526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C540A26473B12001C4526 /* AppDelegate.swift */; };
 		F36C540D26473B12001C4526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C540C26473B12001C4526 /* SceneDelegate.swift */; };
-		F36C540F26473B12001C4526 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C540E26473B12001C4526 /* ViewController.swift */; };
 		F36C541226473B12001C4526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F36C541026473B12001C4526 /* Main.storyboard */; };
 		F36C541426473B17001C4526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F36C541326473B17001C4526 /* Assets.xcassets */; };
 		F36C541726473B17001C4526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F36C541526473B17001C4526 /* LaunchScreen.storyboard */; };
@@ -20,6 +19,12 @@
 		F36C542F264755D5001C4526 /* IB-Scenes+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C542B264755D5001C4526 /* IB-Scenes+Generated.swift */; };
 		F36C5430264755D5001C4526 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C542C264755D5001C4526 /* Strings+Generated.swift */; };
 		F36C5431264755D5001C4526 /* IB-Segues+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C542D264755D5001C4526 /* IB-Segues+Generated.swift */; };
+		F36C543526476150001C4526 /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F36C543426476150001C4526 /* Explore.storyboard */; };
+		F36C54372647615C001C4526 /* Decide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F36C54362647615B001C4526 /* Decide.storyboard */; };
+		F36C543A264761D6001C4526 /* AnimatedTabBar in Frameworks */ = {isa = PBXBuildFile; productRef = F36C5439264761D6001C4526 /* AnimatedTabBar */; };
+		F36C543E2647637F001C4526 /* DecideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C543D2647637F001C4526 /* DecideViewController.swift */; };
+		F36C5440264763A9001C4526 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C543F264763A9001C4526 /* ExploreViewController.swift */; };
+		F36C5444264773FC001C4526 /* +UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C5443264773FC001C4526 /* +UINavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +34,6 @@
 		F36C540726473B12001C4526 /* MastersPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MastersPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36C540A26473B12001C4526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36C540C26473B12001C4526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F36C540E26473B12001C4526 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F36C541126473B12001C4526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F36C541326473B17001C4526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F36C541626473B17001C4526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +44,12 @@
 		F36C542B264755D5001C4526 /* IB-Scenes+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IB-Scenes+Generated.swift"; sourceTree = "<group>"; };
 		F36C542C264755D5001C4526 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		F36C542D264755D5001C4526 /* IB-Segues+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IB-Segues+Generated.swift"; sourceTree = "<group>"; };
+		F36C543426476150001C4526 /* Explore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
+		F36C54362647615B001C4526 /* Decide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Decide.storyboard; sourceTree = "<group>"; };
+		F36C543D2647637F001C4526 /* DecideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideViewController.swift; sourceTree = "<group>"; };
+		F36C543F264763A9001C4526 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		F36C54412647668D001C4526 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F36C5443264773FC001C4526 /* +UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+UINavigationController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +58,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D491E0E34E74A963A4E6C51 /* Pods_MastersPortal.framework in Frameworks */,
+				F36C543A264761D6001C4526 /* AnimatedTabBar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,10 +103,11 @@
 		F36C540926473B12001C4526 /* MastersPortal */ = {
 			isa = PBXGroup;
 			children = (
+				F36C543326476132001C4526 /* Decide */,
+				F36C54322647612A001C4526 /* Explore */,
 				F36C54212647410B001C4526 /* Storyboards */,
 				F36C541F264740E6001C4526 /* Model */,
 				F36C541E264740DF001C4526 /* Resources */,
-				F36C540E26473B12001C4526 /* ViewController.swift */,
 			);
 			path = MastersPortal;
 			sourceTree = "<group>";
@@ -103,6 +115,7 @@
 		F36C541E264740DF001C4526 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F36C5442264773EE001C4526 /* Extensions */,
 				F36C542226475587001C4526 /* Localization */,
 				F36C540A26473B12001C4526 /* AppDelegate.swift */,
 				F36C540C26473B12001C4526 /* SceneDelegate.swift */,
@@ -134,8 +147,10 @@
 		F36C54212647410B001C4526 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				F36C541026473B12001C4526 /* Main.storyboard */,
 				F36C541526473B17001C4526 /* LaunchScreen.storyboard */,
+				F36C541026473B12001C4526 /* Main.storyboard */,
+				F36C543426476150001C4526 /* Explore.storyboard */,
+				F36C54362647615B001C4526 /* Decide.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -147,6 +162,30 @@
 				F36C5429264755B6001C4526 /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		F36C54322647612A001C4526 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				F36C543F264763A9001C4526 /* ExploreViewController.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		F36C543326476132001C4526 /* Decide */ = {
+			isa = PBXGroup;
+			children = (
+				F36C543D2647637F001C4526 /* DecideViewController.swift */,
+			);
+			path = Decide;
+			sourceTree = "<group>";
+		};
+		F36C5442264773EE001C4526 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F36C5443264773FC001C4526 /* +UINavigationController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +206,9 @@
 			dependencies = (
 			);
 			name = MastersPortal;
+			packageProductDependencies = (
+				F36C5439264761D6001C4526 /* AnimatedTabBar */,
+			);
 			productName = MastersPortal;
 			productReference = F36C540726473B12001C4526 /* MastersPortal.app */;
 			productType = "com.apple.product-type.application";
@@ -192,8 +234,12 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = F36C53FE26473B12001C4526;
+			packageReferences = (
+				F36C5438264761D6001C4526 /* XCRemoteSwiftPackageReference "AnimatedTabBar" */,
+			);
 			productRefGroup = F36C540826473B12001C4526 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -210,7 +256,9 @@
 			files = (
 				F36C541726473B17001C4526 /* LaunchScreen.storyboard in Resources */,
 				F36C5427264755B6001C4526 /* Localizable.strings in Resources */,
+				F36C543526476150001C4526 /* Explore.storyboard in Resources */,
 				F36C541426473B17001C4526 /* Assets.xcassets in Resources */,
+				F36C54372647615C001C4526 /* Decide.storyboard in Resources */,
 				F36C541226473B12001C4526 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,10 +313,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36C542E264755D5001C4526 /* XCAssets+Generated.swift in Sources */,
-				F36C540F26473B12001C4526 /* ViewController.swift in Sources */,
 				F36C5431264755D5001C4526 /* IB-Segues+Generated.swift in Sources */,
+				F36C543E2647637F001C4526 /* DecideViewController.swift in Sources */,
 				F36C540B26473B12001C4526 /* AppDelegate.swift in Sources */,
 				F36C542426475594001C4526 /* BartyCrouch.swift in Sources */,
+				F36C5444264773FC001C4526 /* +UINavigationController.swift in Sources */,
+				F36C5440264763A9001C4526 /* ExploreViewController.swift in Sources */,
 				F36C5430264755D5001C4526 /* Strings+Generated.swift in Sources */,
 				F36C540D26473B12001C4526 /* SceneDelegate.swift in Sources */,
 				F36C542F264755D5001C4526 /* IB-Scenes+Generated.swift in Sources */,
@@ -298,6 +348,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F36C5428264755B6001C4526 /* en */,
+				F36C54412647668D001C4526 /* tr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -309,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -370,6 +422,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -485,6 +538,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F36C5438264761D6001C4526 /* XCRemoteSwiftPackageReference "AnimatedTabBar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:pb-studios/AnimatedTabBar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F36C5439264761D6001C4526 /* AnimatedTabBar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F36C5438264761D6001C4526 /* XCRemoteSwiftPackageReference "AnimatedTabBar" */;
+			productName = AnimatedTabBar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F36C53FF26473B12001C4526 /* Project object */;
 }
