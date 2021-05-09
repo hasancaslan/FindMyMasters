@@ -1,24 +1,46 @@
 PODS:
+  - BulletinBoard (5.0.0)
+  - Cards (1.4.0):
+    - Player (= 0.13.0)
   - JGProgressHUD (2.2)
   - PKHUD (5.3.0)
+  - Player (0.13.0)
   - SnapKit (5.0.1)
+  - SwiftMessages (9.0.2):
+    - SwiftMessages/App (= 9.0.2)
+  - SwiftMessages/App (9.0.2)
+  - ViewAnimator (3.0.2)
 
 DEPENDENCIES:
+  - BulletinBoard
+  - Cards
   - JGProgressHUD
   - PKHUD
   - SnapKit
+  - SwiftMessages
+  - ViewAnimator
 
 SPEC REPOS:
   trunk:
+    - BulletinBoard
+    - Cards
     - JGProgressHUD
     - PKHUD
+    - Player
     - SnapKit
+    - SwiftMessages
+    - ViewAnimator
 
 SPEC CHECKSUMS:
+  BulletinBoard: dba77053c2a7b64953f63073f7534165af2edd21
+  Cards: 45ae6bd0eca7b5e8016d3b6cb30b60b04753f68f
   JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
+  Player: 968d8d07d923bcdd6f7e4091c9e306eb44a5f7a4
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftMessages: 77b847d1405f99046ffbd0d856bc7d73e6892686
+  ViewAnimator: 16435576cd44fca0b0d63147d5031fd3e91d295a
 
-PODFILE CHECKSUM: 8086b7e2f1faa1753e59916cb49bef74d1263ee6
+PODFILE CHECKSUM: e1bd7a26d417bcad68e8b73eac50731c44c0d297
 
 COCOAPODS: 1.10.1
