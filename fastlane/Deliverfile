@@ -1,0 +1,20 @@
+###################### More Options ######################
+# If you want to have even more control, check out the documentation
+# https://github.com/fastlane/fastlane/blob/master/deliver/Deliverfile.md
+
+keywords(
+  "en-US" => "Master, Tuition, University, Program",
+  "tr" => "Master, Ücret, Üniversite, Program"
+)
+
+copyright "#{Time.now.year} Hasan Can Aslan"
+
+name(
+  "en-US" => "Find My Master's",
+  "tr" => "Master'ımı Bul"
+)
+
+support_url(
+  "en-US" => "https://hasancaslan.github.io/FindMyMasters/",
+  "tr" => "https://hasancaslan.github.io/FindMyMasters/"
+)
