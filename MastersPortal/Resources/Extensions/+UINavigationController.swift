@@ -23,7 +23,7 @@ extension UINavigationController {
     func configureNavigationBar() {
         navigationBar.prefersLargeTitles = true
         navigationBar.barStyle = .black
-        navigationBar.backgroundColor = Asset.primaryColor.color
-        setStatusBar(backgroundColor: Asset.primaryColor.color)
+        navigationBar.backgroundColor = Asset.Colors.primaryColor.color
+        setStatusBar(backgroundColor: Asset.Colors.primaryColor.color)
     }
 }

@@ -21,6 +21,10 @@ target 'MastersPortal' do
   # animations
   pod 'ViewAnimator'
 
+  # Data
+  pod 'SQLite.swift'
+  pod 'IGListKit'
+
 end
 
 post_install do |pi|
