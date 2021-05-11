@@ -7,11 +7,7 @@
 
 import UIKit
 
-struct SmallCollectionViewSection<CellType: ConfigurableCell, DataType>: CollectionViewSection
-where CellType.DataType == DataType, CellType: UICollectionViewCell {
-    var data: [DataType]
-    //    let data = [SmallCellItem(title: "Computer Science", subtitle: "1234 Programs", icon: UIImage(systemName: "desktopcomputer")!, buttonTitle: "Browse")]
-
+struct SmallCollectionViewSection: LayoutSection {
     func layoutSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -25,9 +21,9 @@ where CellType.DataType == DataType, CellType: UICollectionViewCell {
         return section
     }
 
-    //    func configureCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
-    //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SmallCell.reuseIdentifier, for: indexPath) as! SmallCell
-    //        cell.configure(data[0] as! SmallCellItem)
-    //        return cell
-    //    }
+    func configureCell(collectionView: UICollectionView, indexPath: IndexPath, item: AnyHashable) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SmallCell.reuseIdentifier, for: indexPath) as! SmallCell
+        cell.configure(item as! SmallCellItem)
+        return cell
+    }
 }

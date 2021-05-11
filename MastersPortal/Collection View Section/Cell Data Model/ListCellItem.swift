@@ -7,12 +7,22 @@
 
 import UIKit
 
-struct ListCellItem: SectionItem {
+struct ListCellItem: Hashable {
+    let identifier = UUID()
+
     var title: String
     var icon: UIImage
 
     init(title: String, icon: UIImage) {
         self.title = title
         self.icon = icon
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
+
+    static func == (lhs: ListCellItem, rhs: ListCellItem) -> Bool {
+        return lhs.identifier == rhs.identifier
     }
 }

@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct SectionHeaderItem {
+    let title: String
+    let visibleButton: Bool
+    var subtitle: String?
+}

@@ -7,10 +7,7 @@
 
 import UIKit
 
-struct ListCollectionViewSection<CellType: ConfigurableCell, DataType>: CollectionViewSection
-where CellType.DataType == DataType, CellType: UICollectionViewCell {
-    var data: [DataType]
-
+struct ListCollectionViewSection: LayoutSection {
     func layoutSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -22,9 +19,9 @@ where CellType.DataType == DataType, CellType: UICollectionViewCell {
         return section
     }
 
-    //    func configureCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
-    //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListCell.reuseIdentifier, for: indexPath) as! ListCell
-    //        cell.configure(data[0] as! ListCellItem)
-    //        return cell
-    //    }
+    func configureCell(collectionView: UICollectionView, indexPath: IndexPath, item: AnyHashable) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListCell.reuseIdentifier, for: indexPath) as! ListCell
+        cell.configure(item as! ListCellItem)
+        return cell
+    }
 }

@@ -7,10 +7,7 @@
 
 import UIKit
 
-struct FeaturedCollectionViewSection<CellType: ConfigurableCell, DataType>: CollectionViewSection
-where CellType.DataType == DataType, CellType: UICollectionViewCell {
-    var data: [DataType]
-
+struct FeaturedCollectionViewSection: LayoutSection {
     func layoutSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -22,5 +19,11 @@ where CellType.DataType == DataType, CellType: UICollectionViewCell {
         section.orthogonalScrollingBehavior = .groupPagingCentered
 
         return section
+    }
+
+    func configureCell(collectionView: UICollectionView, indexPath: IndexPath, item: AnyHashable) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExtraLargeCell.reuseIdentifier, for: indexPath) as! ExtraLargeCell
+        cell.configure(item as! ExtraLargeCellItem)
+        return cell
     }
 }

@@ -7,7 +7,9 @@
 
 import UIKit
 
-struct ExtraLargeCellItem: SectionItem {
+struct ExtraLargeCellItem: Hashable {
+    let identifier = UUID()
+
     var caption: String
     var title: String
     var subtitle: String
@@ -18,5 +20,13 @@ struct ExtraLargeCellItem: SectionItem {
         self.title = title
         self.subtitle = subtitle
         self.thumbnail = thumbnail
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
+
+    static func == (lhs: ExtraLargeCellItem, rhs: ExtraLargeCellItem) -> Bool {
+        return lhs.identifier == rhs.identifier
     }
 }

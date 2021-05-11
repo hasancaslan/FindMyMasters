@@ -7,7 +7,9 @@
 
 import UIKit
 
-struct SmallCellItem: SectionItem {
+struct SmallCellItem: Hashable {
+    let identifier = UUID()
+
     var buttonTitle: String
     var title: String
     var subtitle: String
@@ -18,5 +20,13 @@ struct SmallCellItem: SectionItem {
         self.subtitle = subtitle
         self.icon = icon
         self.buttonTitle = buttonTitle
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
+
+    static func == (lhs: SmallCellItem, rhs: SmallCellItem) -> Bool {
+        return lhs.identifier == rhs.identifier
     }
 }

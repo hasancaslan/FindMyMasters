@@ -6,6 +6,7 @@
 //
 
 import Foundation
-
-protocol SectionItem {
-}
+//
+// protocol SectionItem: Hashable {
+//    
+// }

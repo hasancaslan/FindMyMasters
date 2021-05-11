@@ -5,21 +5,19 @@
 //  Created by HASAN CAN on 11/5/21.
 //
 
-
 import UIKit
 
 class SectionTitleSupplementaryView: UICollectionReusableView {
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
     private let button = UIButton(type: .system)
-    private let topLine = UIView()
     private let inset = CGFloat(20)
-    
-    var titleButtonAction : (() -> ())?
+
+    var titleButtonAction: (() -> Void)?
 
     private let outerStackView = UIStackView()
     private let labelStackView = UIStackView()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         sharedinit()
@@ -29,22 +27,16 @@ class SectionTitleSupplementaryView: UICollectionReusableView {
     }
 }
 
-extension SectionTitleSupplementaryView {
-    
-    public func configure(with content: SectionHeaderItem) {
-        titleLabel.text = content.title
-        if let subtitle = content.subtitle {
+extension SectionTitleSupplementaryView: ConfigurableCell {
+    public func configure(_ data: SectionHeaderItem) {
+        titleLabel.text = data.title
+        if let subtitle = data.subtitle {
             subtitleLabel.text = subtitle
         }
-        
-        if !content.visibleButton {
-            self.button.isHidden = true
-        } else {
-            self.button.isHidden = false
 
-        }
+        self.button.isHidden = !data.visibleButton
     }
-    
+
     func sharedinit() {
         addSubview(outerStackView)
         outerStackView.axis = .horizontal
@@ -57,45 +49,34 @@ extension SectionTitleSupplementaryView {
             outerStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: inset),
             outerStackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset)
         ])
-        
+
         labelStackView.axis = .vertical
         labelStackView.translatesAutoresizingMaskIntoConstraints = true
         outerStackView.addArrangedSubview(labelStackView)
-        
-        titleLabel.font = UIFont.systemFont(ofSize: 24.0, weight: .bold)
+
+        titleLabel.font = UIFont.systemFont(ofSize: 17.0, weight: .heavy)
         titleLabel.adjustsFontForContentSizeCategory = true
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.numberOfLines = 1
-        
+
         labelStackView.addArrangedSubview(titleLabel)
-        
-        subtitleLabel.font = UIFont.systemFont(ofSize: 17.0, weight: .regular)
+
+        subtitleLabel.font = UIFont.systemFont(ofSize: 14.0, weight: .regular)
         subtitleLabel.adjustsFontForContentSizeCategory = true
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.numberOfLines = 1
         labelStackView.addArrangedSubview(subtitleLabel)
-        
+
         button.setTitle("See All", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0, weight: .light)
-        button.titleLabel?.textColor = .link
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 17.0, weight: .regular)
+        button.setTitleColor(Asset.Colors.primaryColor.color, for: .normal)
         self.button.addTarget(self, action: #selector(getButtonTapped(_:)), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
-        
+
         outerStackView.addArrangedSubview(button)
-        
-        addSubview(topLine)
-        topLine.backgroundColor = .systemGray5
-        topLine.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            topLine.topAnchor.constraint(equalTo: topAnchor),
-            topLine.leadingAnchor.constraint(equalTo: leadingAnchor, constant: inset),
-            topLine.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -inset),
-            topLine.heightAnchor.constraint(equalToConstant: 1)
-        ])
     }
-    
-    @IBAction func getButtonTapped(_ sender: UIButton){
-      titleButtonAction?()
+
+    @IBAction func getButtonTapped(_ sender: UIButton) {
+        titleButtonAction?()
     }
-    
 }

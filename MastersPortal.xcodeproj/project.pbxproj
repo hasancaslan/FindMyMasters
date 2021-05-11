@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D491E0E34E74A963A4E6C51 /* Pods_MastersPortal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6515EA2DEE80100191E898C /* Pods_MastersPortal.framework */; };
+		F34919C82649EC8D005464AB /* LayoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34919C72649EC8D005464AB /* LayoutSection.swift */; };
+		F34919CA264A1193005464AB /* SectionTitleSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34919C9264A1193005464AB /* SectionTitleSupplementaryView.swift */; };
+		F34919CC264A1220005464AB /* SectionHeaderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34919CB264A1220005464AB /* SectionHeaderItem.swift */; };
 		F36C540B26473B12001C4526 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C540A26473B12001C4526 /* AppDelegate.swift */; };
 		F36C540D26473B12001C4526 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C540C26473B12001C4526 /* SceneDelegate.swift */; };
 		F36C541226473B12001C4526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F36C541026473B12001C4526 /* Main.storyboard */; };
@@ -50,6 +53,9 @@
 		13F0DF26CAA92C172F0C0AB5 /* Pods-MastersPortal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MastersPortal.release.xcconfig"; path = "Target Support Files/Pods-MastersPortal/Pods-MastersPortal.release.xcconfig"; sourceTree = "<group>"; };
 		32AE47F150A5AC7BBD46E732 /* Pods-MastersPortal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MastersPortal.debug.xcconfig"; path = "Target Support Files/Pods-MastersPortal/Pods-MastersPortal.debug.xcconfig"; sourceTree = "<group>"; };
 		C6515EA2DEE80100191E898C /* Pods_MastersPortal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MastersPortal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F34919C72649EC8D005464AB /* LayoutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSection.swift; sourceTree = "<group>"; };
+		F34919C9264A1193005464AB /* SectionTitleSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleSupplementaryView.swift; sourceTree = "<group>"; };
+		F34919CB264A1220005464AB /* SectionHeaderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderItem.swift; sourceTree = "<group>"; };
 		F36C540726473B12001C4526 /* MastersPortal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MastersPortal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36C540A26473B12001C4526 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36C540C26473B12001C4526 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +241,7 @@
 				F36C545726488FD0001C4526 /* TitleCollectionViewSection.swift */,
 				F36C545F2648922B001C4526 /* SmallCollectionViewSection.swift */,
 				F36C546D26489726001C4526 /* ListCollectionViewSection.swift */,
+				F34919C72649EC8D005464AB /* LayoutSection.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -252,6 +259,7 @@
 		F36C54472648378C001C4526 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F34919C9264A1193005464AB /* SectionTitleSupplementaryView.swift */,
 				F36C544C26483A29001C4526 /* ConfigurableCell.swift */,
 				F36C545126487999001C4526 /* ExtraLargeCell.xib */,
 				F36C545026487998001C4526 /* ExtraLargeCell.swift */,
@@ -273,6 +281,7 @@
 				F36C546526489265001C4526 /* SmallCellItem.swift */,
 				F36C546B264896F8001C4526 /* ListCellItem.swift */,
 				F36C546F2648A5C3001C4526 /* SectionItem.swift */,
+				F34919CB264A1220005464AB /* SectionHeaderItem.swift */,
 			);
 			path = "Cell Data Model";
 			sourceTree = "<group>";
@@ -408,12 +417,15 @@
 				F36C546C264896F8001C4526 /* ListCellItem.swift in Sources */,
 				F36C5469264896C0001C4526 /* ListCell.swift in Sources */,
 				F36C54702648A5C3001C4526 /* SectionItem.swift in Sources */,
+				F34919CC264A1220005464AB /* SectionHeaderItem.swift in Sources */,
 				F36C545626487AE4001C4526 /* ExtraLargeCellItem.swift in Sources */,
 				F36C545826488FD0001C4526 /* TitleCollectionViewSection.swift in Sources */,
+				F34919CA264A1193005464AB /* SectionTitleSupplementaryView.swift in Sources */,
 				F36C546626489265001C4526 /* SmallCellItem.swift in Sources */,
 				F36C545E26489011001C4526 /* SectionTitleItem.swift in Sources */,
 				F36C544D26483A29001C4526 /* ConfigurableCell.swift in Sources */,
 				F36C546326489236001C4526 /* SmallCell.swift in Sources */,
+				F34919C82649EC8D005464AB /* LayoutSection.swift in Sources */,
 				F36C542E264755D5001C4526 /* XCAssets+Generated.swift in Sources */,
 				F36C5431264755D5001C4526 /* IB-Segues+Generated.swift in Sources */,
 				F36C543E2647637F001C4526 /* DecideViewController.swift in Sources */,
