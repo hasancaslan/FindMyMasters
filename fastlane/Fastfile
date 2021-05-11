@@ -50,7 +50,7 @@ platform :ios do
     #snapshot(localize_simulator: true, dark_mode: false)
 
     increment_version_number(
-      version_number: "2.1.1" # Set a specific version number
+      bump_type: "patch" # Automatically increment patch version number
     )
 
     frameit(white: true)
