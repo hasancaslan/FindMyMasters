@@ -1,5 +1,5 @@
 //
-//  SmallCellItem.swift
+//  DiciplineItemViewModel.swift
 //  MastersPortal
 //
 //  Created by HASAN CAN on 10/5/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct SmallCellItem: Hashable {
+class DiciplineItemViewModel: NSObject {
     let identifier = UUID()
 
     var buttonTitle: String
@@ -22,11 +22,11 @@ struct SmallCellItem: Hashable {
         self.buttonTitle = buttonTitle
     }
 
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(identifier)
-    }
-
-    static func == (lhs: SmallCellItem, rhs: SmallCellItem) -> Bool {
-        return lhs.identifier == rhs.identifier
-    }
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(identifier)
+//    }
+//
+//    static func == (lhs: SmallCellItem, rhs: SmallCellItem) -> Bool {
+//        return lhs.identifier == rhs.identifier
+//    }
 }

@@ -5,14 +5,14 @@
 //  Created by HASAN CAN on 9/5/21.
 //
 
-import Foundation
+import IGListKit
 
-public extension ConfigurableCell {
+extension ConfigurableCell {
     static var reuseIdentifier: String { return String(describing: Self.self) }
 }
 
-public protocol ConfigurableCell {
+protocol ConfigurableCell {
     associatedtype DataType
-    func configure(_ data: DataType)
+    func configure(_ viewModel: DataType)
     static var reuseIdentifier: String { get }
 }

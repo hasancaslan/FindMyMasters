@@ -1,13 +1,29 @@
 //
-//  TitleCollectionViewSection.swift
+//  TitleLayoutSection.swift
 //  MastersPortal
 //
 //  Created by HASAN CAN on 9/5/21.
 //
 
+import IGListKit
 import UIKit
 
-struct TitleCollectionViewSection: LayoutSection {
+struct TitleLayoutSection: LayoutSection {
+//    func configureCell(collectionContext: ListCollectionContext, sectionController: ListSectionController, index: Int, item: AnyHashable) -> UICollectionViewCell {
+//        let cell = collectionContext.dequeueReusableCell(withNibName: SectionTitleCell.reuseIdentifier, bundle: Bundle.main, for: sectionController, at: index)
+//
+//        if let cell = cell as? SectionTitleCell,
+//            let item = item as? SectionTitleViewModel {
+//            cell.configure(item)
+//        }
+//
+//        return cell
+//    }
+
+    func sectionController() -> ListSectionController {
+        return ListSectionController()
+    }
+
     func layoutSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -30,18 +46,12 @@ struct TitleCollectionViewSection: LayoutSection {
         return section
     }
 
-    func configureCell(collectionView: UICollectionView, indexPath: IndexPath, item: AnyHashable) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SectionTitleCell.reuseIdentifier, for: indexPath) as! SectionTitleCell
-        cell.configure(item as! SectionTitleItem)
-        return cell
-    }
-
 //    func header(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionReusableView? {
 //        let header = collectionView.dequeueReusableSupplementaryView(
 //            ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: String(describing: SectionTitleSupplementaryView.self), for: indexPath)
 //        if let hdr = header as? SectionTitleSupplementaryView {
 //            hdr.configure(
-//                SectionHeaderItem(
+//                SectionHeaderViewModel(
 //                    title: "Diciplines",
 //                    visibleButton: true,
 //                    subtitle: ""))

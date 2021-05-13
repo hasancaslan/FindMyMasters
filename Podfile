@@ -25,6 +25,9 @@ target 'MastersPortal' do
   pod 'SQLite.swift'
   pod 'IGListKit'
 
+  # Debug
+  pod 'FLEX', :configurations => ['Debug']
+
 end
 
 post_install do |pi|

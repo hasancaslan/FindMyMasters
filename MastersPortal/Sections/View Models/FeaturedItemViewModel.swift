@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct ExtraLargeCellItem: Hashable {
+class FeaturedItemViewModel: NSObject {
     let identifier = UUID()
 
     var caption: String
@@ -21,12 +21,12 @@ struct ExtraLargeCellItem: Hashable {
         self.subtitle = subtitle
         self.thumbnail = thumbnail
     }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(identifier)
-    }
-
-    static func == (lhs: ExtraLargeCellItem, rhs: ExtraLargeCellItem) -> Bool {
-        return lhs.identifier == rhs.identifier
-    }
+//
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(identifier)
+//    }
+//
+//    static func == (lhs: ExtraLargeCellItem, rhs: ExtraLargeCellItem) -> Bool {
+//        return lhs.identifier == rhs.identifier
+//    }
 }

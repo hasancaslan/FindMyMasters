@@ -1,5 +1,5 @@
 //
-//  SectionTitleItem.swift
+//  SectionTitleViewModel.swift
 //  MastersPortal
 //
 //  Created by HASAN CAN on 10/5/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SectionTitleItem: Hashable {
+class SectionTitleViewModel: NSObject {
     let identifier = UUID()
 
     var title: String
@@ -18,11 +18,11 @@ struct SectionTitleItem: Hashable {
         self.navigationTitle = navigationTitle
     }
 
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(identifier)
-    }
-
-    static func == (lhs: SectionTitleItem, rhs: SectionTitleItem) -> Bool {
-        return lhs.identifier == rhs.identifier
-    }
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(identifier)
+//    }
+//
+//    static func == (lhs: SectionTitleItem, rhs: SectionTitleItem) -> Bool {
+//        return lhs.identifier == rhs.identifier
+//    }
 }
