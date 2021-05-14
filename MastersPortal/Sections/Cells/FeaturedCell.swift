@@ -2,11 +2,11 @@ import IGListKit
 import UIKit
 
 final class FeaturedCell: UICollectionViewCell, ConfigurableCell, ListBindable {
-    @IBOutlet weak var captionLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var thumbnailView: UIView!
-    @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet var captionLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var subtitleLabel: UILabel!
+    @IBOutlet var thumbnailView: UIView!
+    @IBOutlet var thumbnailImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

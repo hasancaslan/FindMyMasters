@@ -8,15 +8,75 @@
 import Foundation
 import IGListKit
 
-class ExploreDataSource: NSObject, ListAdapterDataSource {
-    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+class ExploreDataSource: NSObject {
+    let viewModel: ExploreViewModel
+    var sections: [ExploreSection]
+
+    init(viewModel: ExploreViewModel, sections: [ExploreSection]) {
+        self.viewModel = viewModel
+        self.sections = sections
+    }
+
+    override convenience init() {
+        let _sections: [ExploreSection] = [.featured, .diciplinesTitle, .diciplines, .countriesTitle, .countries]
+        let _viewModel = ExploreViewModel()
+        self.init(viewModel: _viewModel, sections: _sections)
+    }
+
+    func layoutSection(for section: ExploreSection) -> NSCollectionLayoutSection {
+        layout(for: section).layoutSection()
+    }
+
+    func layout(for section: ExploreSection) -> LayoutSection {
+        switch section {
+        case .featured:
+            return FeaturedLayoutSection()
+
+        case .diciplinesTitle:
+            return TitleLayoutSection()
+
+        case .diciplines:
+            return DiciplineLayoutSection()
+
+        case .countriesTitle:
+            return TitleLayoutSection()
+
+        case .countries:
+            return CountryLayoutSection()
+        }
+    }
+
+    func model(for section: ExploreSection) -> ListDiffable {
+        switch section {
+        case .featured:
+            return viewModel.featuredViewModel
+
+        case .diciplinesTitle:
+            return viewModel.diciplinesTitle
+
+        case .diciplines:
+            return viewModel.diciplineViewModel
+
+        case .countriesTitle:
+            return viewModel.countriesTitle
+
+        case .countries:
+            return viewModel.countryViewModel
+        }
+    }
+}
+
+// MARK: - ListAdapterDataSource
+
+extension ExploreDataSource: ListAdapterDataSource {
+    func objects(for _: ListAdapter) -> [ListDiffable] {
         let viewModel = ExploreViewModel()
         let items: [ListDiffable] =
             [viewModel.featuredViewModel, viewModel.diciplinesTitle, viewModel.diciplineViewModel, viewModel.countriesTitle, viewModel.countryViewModel] as [ListDiffable]
         return items
     }
 
-    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+    func listAdapter(_: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         if object is FeaturedSectionViewModel {
             return FeaturedSectionController()
         } else if object is DiciplineSectionViewModel {
@@ -28,7 +88,7 @@ class ExploreDataSource: NSObject, ListAdapterDataSource {
         }
     }
 
-    func emptyView(for listAdapter: ListAdapter) -> UIView? {
+    func emptyView(for _: ListAdapter) -> UIView? {
         return nil
     }
 }
@@ -40,33 +100,39 @@ class ExploreViewModel {
                 caption: "POPULAR",
                 title: "Cyber Security",
                 subtitle: "Koç University",
-                thumbnail: Asset.DemoImages.kuCyber.image),
+                thumbnail: Asset.DemoImages.kuCyber.image
+            ),
             FeaturedItemViewModel(
                 caption: "POPULAR",
                 title: "Cyber Security",
                 subtitle: "Koç University",
-                thumbnail: Asset.DemoImages.kuCyber.image),
+                thumbnail: Asset.DemoImages.kuCyber.image
+            ),
             FeaturedItemViewModel(
                 caption: "POPULAR",
                 title: "Cyber Security",
                 subtitle: "Koç University",
-                thumbnail: Asset.DemoImages.kuCyber.image),
+                thumbnail: Asset.DemoImages.kuCyber.image
+            ),
             FeaturedItemViewModel(
                 caption: "POPULAR",
                 title: "Cyber Security",
                 subtitle: "Koç University",
-                thumbnail: Asset.DemoImages.kuCyber.image),
+                thumbnail: Asset.DemoImages.kuCyber.image
+            ),
             FeaturedItemViewModel(
                 caption: "POPULAR",
                 title: "Cyber Security",
                 subtitle: "Koç University",
-                thumbnail: Asset.DemoImages.kuCyber.image)
+                thumbnail: Asset.DemoImages.kuCyber.image
+            ),
         ]
 
     let diciplinesTitle =
         SectionTitleViewModel(
             title: "Diciplines",
-            navigationTitle: "See All")
+            navigationTitle: "See All"
+        )
 
     private let diciplinesData =
         [
@@ -74,59 +140,72 @@ class ExploreViewModel {
                 title: "Computer Science",
                 subtitle: "1234 Programs",
                 icon: UIImage(systemName: "desktopcomputer")!,
-                buttonTitle: "Browse"),
+                buttonTitle: "Browse"
+            ),
             DiciplineItemViewModel(
                 title: "Computer Science",
                 subtitle: "1234 Programs",
                 icon: UIImage(systemName: "desktopcomputer")!,
-                buttonTitle: "Browse"),
+                buttonTitle: "Browse"
+            ),
             DiciplineItemViewModel(
                 title: "Computer Science",
                 subtitle: "1234 Programs",
                 icon: UIImage(systemName: "desktopcomputer")!,
-                buttonTitle: "Browse"),
+                buttonTitle: "Browse"
+            ),
             DiciplineItemViewModel(
                 title: "Computer Science",
                 subtitle: "1234 Programs",
                 icon: UIImage(systemName: "desktopcomputer")!,
-                buttonTitle: "Browse"),
+                buttonTitle: "Browse"
+            ),
             DiciplineItemViewModel(
                 title: "Computer Science",
                 subtitle: "1234 Programs",
                 icon: UIImage(systemName: "desktopcomputer")!,
-                buttonTitle: "Browse"),
+                buttonTitle: "Browse"
+            ),
             DiciplineItemViewModel(
                 title: "Computer Science",
                 subtitle: "1234 Programs",
                 icon: UIImage(systemName: "desktopcomputer")!,
-                buttonTitle: "Browse")
+                buttonTitle: "Browse"
+            ),
         ]
 
     let countriesTitle =
         SectionTitleViewModel(
             title: "Countries",
-            navigationTitle: "See All")
+            navigationTitle: "See All"
+        )
 
     private let countryData =
         [
             CountryItemViewModel(
                 title: "Turkey",
-                icon: UIImage()),
+                icon: UIImage()
+            ),
             CountryItemViewModel(
                 title: "Turkey",
-                icon: UIImage()),
+                icon: UIImage()
+            ),
             CountryItemViewModel(
                 title: "Turkey",
-                icon: UIImage()),
+                icon: UIImage()
+            ),
             CountryItemViewModel(
                 title: "Turkey",
-                icon: UIImage()),
+                icon: UIImage()
+            ),
             CountryItemViewModel(
                 title: "Turkey",
-                icon: UIImage()),
+                icon: UIImage()
+            ),
             CountryItemViewModel(
                 title: "Turkey",
-                icon: UIImage())
+                icon: UIImage()
+            ),
         ]
 
     var featuredViewModel: FeaturedSectionViewModel {
@@ -140,20 +219,4 @@ class ExploreViewModel {
     var countryViewModel: CountrySectionViewModel {
         return CountrySectionViewModel(cells: countryData)
     }
-
-    var sections: [LayoutSection] = [
-        FeaturedLayoutSection(),
-        TitleLayoutSection(),
-        DiciplineLayoutSection(),
-        TitleLayoutSection(),
-        CountryLayoutSection()
-    ]
-}
-
-enum Section: CaseIterable {
-    case featured
-    case diciplinesTitle
-    case diciplines
-    case countriesTitle
-    case countries
 }

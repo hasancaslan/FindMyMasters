@@ -53,6 +53,7 @@
 		F3E192F2264CBD1700FE0CC8 /* FeaturedSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E192F1264CBD1700FE0CC8 /* FeaturedSectionViewModel.swift */; };
 		F3E192F4264CBD9900FE0CC8 /* DiciplineSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E192F3264CBD9900FE0CC8 /* DiciplineSectionViewModel.swift */; };
 		F3E192F6264CBE1800FE0CC8 /* CountrySectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E192F5264CBE1800FE0CC8 /* CountrySectionViewModel.swift */; };
+		F3E19307264DB0EB00FE0CC8 /* ExploreSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E19306264DB0EB00FE0CC8 /* ExploreSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		F3E192F1264CBD1700FE0CC8 /* FeaturedSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedSectionViewModel.swift; sourceTree = "<group>"; };
 		F3E192F3264CBD9900FE0CC8 /* DiciplineSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiciplineSectionViewModel.swift; sourceTree = "<group>"; };
 		F3E192F5264CBE1800FE0CC8 /* CountrySectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySectionViewModel.swift; sourceTree = "<group>"; };
+		F3E19306264DB0EB00FE0CC8 /* ExploreSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,8 +274,9 @@
 		F36C54472648378C001C4526 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F36C545126487999001C4526 /* FeaturedCell.xib */,
 				F36C544C26483A29001C4526 /* ConfigurableCell.swift */,
+				F36C545026487998001C4526 /* FeaturedCell.swift */,
+				F36C545126487999001C4526 /* FeaturedCell.xib */,
 				F36C545926488FDE001C4526 /* SectionTitleCell.swift */,
 				F36C545A26488FDE001C4526 /* SectionTitleCell.xib */,
 				F36C546126489236001C4526 /* SmallCell.swift */,
@@ -293,7 +296,6 @@
 				F34919CB264A1220005464AB /* SectionHeaderViewModel.swift */,
 				F3E192F3264CBD9900FE0CC8 /* DiciplineSectionViewModel.swift */,
 				F3E192F5264CBE1800FE0CC8 /* CountrySectionViewModel.swift */,
-				F36C545026487998001C4526 /* FeaturedCell.swift */,
 				F3E192F1264CBD1700FE0CC8 /* FeaturedSectionViewModel.swift */,
 				F36C545526487AE4001C4526 /* FeaturedItemViewModel.swift */,
 				F35FEF76264B38E30003B042 /* NSObject+ListDiffable.swift */,
@@ -304,9 +306,9 @@
 		F3E19303264DA76000FE0CC8 /* Section Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F35FEF7E264B4E680003B042 /* CountriesSectionController.swift */,
 				F35FEF78264B4E0A0003B042 /* FeaturedSectionController.swift */,
 				F35FEF7A264B4E260003B042 /* TitleSectionController.swift */,
+				F35FEF7E264B4E680003B042 /* CountriesSectionController.swift */,
 				F35FEF7C264B4E5C0003B042 /* DiciplinesSectionController.swift */,
 			);
 			path = "Section Controllers";
@@ -324,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				F35FEF80264C2D650003B042 /* ExploreDataSource.swift */,
+				F3E19306264DB0EB00FE0CC8 /* ExploreSection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				F36C54602648922B001C4526 /* DiciplineLayoutSection.swift in Sources */,
 				F36C5440264763A9001C4526 /* ExploreViewController.swift in Sources */,
 				F36C546E26489726001C4526 /* CountryLayoutSection.swift in Sources */,
+				F3E19307264DB0EB00FE0CC8 /* ExploreSection.swift in Sources */,
 				F35FEF79264B4E0A0003B042 /* FeaturedSectionController.swift in Sources */,
 				F36C5430264755D5001C4526 /* Strings+Generated.swift in Sources */,
 				F36C540D26473B12001C4526 /* SceneDelegate.swift in Sources */,

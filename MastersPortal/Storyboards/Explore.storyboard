@@ -37,10 +37,11 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" largeTitles="YES" id="IHf-R8-ePA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" largeTitles="YES" id="IHf-R8-ePA">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
+                        <color key="barTintColor" name="PrimaryColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -65,7 +66,7 @@
     <resources>
         <image name="compass" width="22" height="22"/>
         <namedColor name="PrimaryColor">
-            <color red="0.74117647058823533" green="0.12549019607843137" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.74099999666213989" green="0.125" blue="0.18400000035762787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

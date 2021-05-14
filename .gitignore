@@ -107,3 +107,7 @@ node_modules/
 # Optional npm cache directory
 .npm
 
+# Build Tools
+BuildTools/.build
+BuildTools/.swiftpm
+

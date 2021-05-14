@@ -40,9 +40,9 @@ struct TitleLayoutSection: LayoutSection {
 //                   layoutSize: headerSize,
 //                   elementKind: UICollectionView.elementKindSectionHeader,
 //                   alignment: .top)
-//               
+//
 //                section.boundarySupplementaryItems = [sectionHeader]
-//        
+//
         return section
     }
 

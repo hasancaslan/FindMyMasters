@@ -24,22 +24,26 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See All" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57L-Aj-bhA">
-                        <rect key="frame" x="302" y="14.5" width="53" height="21"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHv-41-wTn">
+                        <rect key="frame" x="302" y="8.5" width="53" height="33"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" name="PrimaryColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <state key="normal" title="See All">
+                            <color key="titleColor" name="PrimaryColor"/>
+                        </state>
+                        <connections>
+                            <action selector="onNavigation:" destination="Zaz-cJ-qXd" eventType="touchUpInside" id="d7M-Kd-imU"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="wHv-41-wTn" firstAttribute="centerY" secondItem="MQl-M7-vRZ" secondAttribute="centerY" id="0qU-i3-2Yd"/>
                     <constraint firstItem="MQl-M7-vRZ" firstAttribute="leading" secondItem="EaC-SZ-KDq" secondAttribute="leading" constant="20" id="8fX-uU-nGH"/>
-                    <constraint firstAttribute="trailing" secondItem="57L-Aj-bhA" secondAttribute="trailing" constant="20" id="Rbj-WN-0TG"/>
-                    <constraint firstItem="MQl-M7-vRZ" firstAttribute="centerY" secondItem="57L-Aj-bhA" secondAttribute="centerY" id="vYe-xo-kL3"/>
+                    <constraint firstAttribute="trailing" secondItem="wHv-41-wTn" secondAttribute="trailing" constant="20" id="GuK-Ag-IEU"/>
                     <constraint firstItem="MQl-M7-vRZ" firstAttribute="centerY" secondItem="EaC-SZ-KDq" secondAttribute="centerY" id="vk9-9W-81e"/>
                 </constraints>
             </collectionViewCellContentView>
             <connections>
-                <outlet property="navigationLabel" destination="57L-Aj-bhA" id="ht5-Ye-gWS"/>
+                <outlet property="navigationButton" destination="wHv-41-wTn" id="1Wc-HG-eb3"/>
                 <outlet property="titleLabel" destination="MQl-M7-vRZ" id="Krl-PB-MEp"/>
             </connections>
             <point key="canvasLocation" x="-65.217391304347828" y="201.5625"/>

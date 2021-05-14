@@ -16,19 +16,20 @@ class CountriesSectionController: ListBindingSectionController<CountryItemViewMo
         layoutSection = CountryLayoutSection()
         super.init()
         dataSource = self
+        selectionDelegate = self
     }
 }
 
 // MARK: - Data Source
 
 extension CountriesSectionController: ListBindingSectionControllerDataSource {
-    func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, viewModelsFor object: Any) -> [ListDiffable] {
+    func sectionController(_: ListBindingSectionController<ListDiffable>, viewModelsFor object: Any) -> [ListDiffable] {
         guard let object = object as? CountrySectionViewModel else { fatalError() }
         viewModel = object
         return object.cells
     }
 
-    func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, cellForViewModel viewModel: Any, at index: Int) -> UICollectionViewCell & ListBindable {
+    func sectionController(_: ListBindingSectionController<ListDiffable>, cellForViewModel _: Any, at index: Int) -> UICollectionViewCell & ListBindable {
         guard let cell = collectionContext?.dequeueReusableCell(withNibName: ListCell.reuseIdentifier, bundle: nil, for: self, at: index) as? ListCell else {
             fatalError("Could not return a Featured Cell")
         }
@@ -36,7 +37,21 @@ extension CountriesSectionController: ListBindingSectionControllerDataSource {
         return cell
     }
 
-    func sectionController(_ sectionController: ListBindingSectionController<ListDiffable>, sizeForViewModel viewModel: Any, at index: Int) -> CGSize {
+    func sectionController(_: ListBindingSectionController<ListDiffable>, sizeForViewModel _: Any, at _: Int) -> CGSize {
         return .zero
     }
+}
+
+// MARK: - Selection Delegate
+
+extension CountriesSectionController: ListBindingSectionControllerSelectionDelegate {
+    func sectionController(_: ListBindingSectionController<ListDiffable>, didSelectItemAt index: Int, viewModel _: Any) {
+        print("Selected: \(String(describing: viewModel?.cells[index]))")
+    }
+
+    func sectionController(_: ListBindingSectionController<ListDiffable>, didDeselectItemAt _: Int, viewModel _: Any) {}
+
+    func sectionController(_: ListBindingSectionController<ListDiffable>, didHighlightItemAt _: Int, viewModel _: Any) {}
+
+    func sectionController(_: ListBindingSectionController<ListDiffable>, didUnhighlightItemAt _: Int, viewModel _: Any) {}
 }

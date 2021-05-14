@@ -1,19 +1,29 @@
 import IGListKit
 import UIKit
 
+protocol SectionTitleCellDelegate: AnyObject {
+    func didTapNavigation(cell: SectionTitleCell)
+}
+
 final class SectionTitleCell: UICollectionViewCell, ConfigurableCell, ListBindable {
     @IBOutlet private var titleLabel: UILabel!
-    @IBOutlet private var navigationLabel: UILabel!
+    @IBOutlet var navigationButton: UIButton!
+
+    weak var delegate: SectionTitleCellDelegate?
 
     var showsNavigationLabel = true {
         didSet {
-            navigationLabel.isHidden = !showsNavigationLabel
+            navigationButton.isHidden = !showsNavigationLabel
         }
+    }
+
+    @IBAction func onNavigation(_: Any) {
+        delegate?.didTapNavigation(cell: self)
     }
 
     func configure(_ viewModel: SectionTitleViewModel) {
         titleLabel.text = viewModel.title
-        navigationLabel.text = viewModel.navigationTitle
+        navigationButton.setTitle(viewModel.navigationTitle, for: .normal)
         showsNavigationLabel = viewModel.navigationTitle != nil
     }
 

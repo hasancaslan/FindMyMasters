@@ -6,8 +6,8 @@ final class SmallCell: UICollectionViewCell, ConfigurableCell, ListBindable {
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var subtitleLabel: UILabel!
     @IBOutlet private var actionButton: UIView!
-    @IBOutlet weak var actionButtonLabel: UILabel!
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet var actionButtonLabel: UILabel!
+    @IBOutlet var iconImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

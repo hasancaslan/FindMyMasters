@@ -9,8 +9,7 @@ import IGListKit
 import UIKit
 
 class ExploreViewController: UIViewController {
-    let viewModel = ExploreViewModel()
-    let exploreDataSource = ExploreDataSource()
+    let dataSource = ExploreDataSource()
 
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
@@ -22,7 +21,8 @@ class ExploreViewController: UIViewController {
 
     lazy var collectionViewLayout: UICollectionViewLayout = {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, _ -> NSCollectionLayoutSection? in
-            return self.viewModel.sections[sectionIndex].layoutSection()
+            let section = self.dataSource.sections[sectionIndex]
+            return self.dataSource.layoutSection(for: section)
         }
         return layout
     }()
@@ -40,7 +40,7 @@ class ExploreViewController: UIViewController {
         addCollectionView()
 
         adapter.collectionView = collectionView
-        adapter.dataSource = exploreDataSource
+        adapter.dataSource = dataSource
     }
 
     private func addCollectionView() {
@@ -51,7 +51,7 @@ class ExploreViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
 
@@ -63,7 +63,7 @@ class ExploreViewController: UIViewController {
         }
     }
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_: UIScrollView) {
         if #available(iOS 13.0, *) {
             // Workaround for incorrect initial offset by `.groupPagingCentered`
             collectionView.reloadData()
@@ -71,4 +71,8 @@ class ExploreViewController: UIViewController {
     }
 }
 
-extension ExploreViewController: UICollectionViewDelegate {}
+extension ExploreViewController: UICollectionViewDelegate {
+    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+    }
+}

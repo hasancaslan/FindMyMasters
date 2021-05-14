@@ -9,12 +9,12 @@ import UIKit
 
 class EmbeddedCollectionViewCell<CellType: ConfigurableCell>: UICollectionViewCell {
     lazy var layoutSection: LayoutSection = {
-        return FeaturedLayoutSection()
+        FeaturedLayoutSection()
     }()
 
     lazy var collectionViewLayout: UICollectionViewLayout = {
-        let layout = UICollectionViewCompositionalLayout {_, _ in
-            return self.layoutSection.layoutSection()
+        let layout = UICollectionViewCompositionalLayout { _, _ in
+            self.layoutSection.layoutSection()
         }
 
         return layout
