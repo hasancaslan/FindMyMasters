@@ -50,6 +50,9 @@
 		F36C546A264896C0001C4526 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F36C5468264896C0001C4526 /* ListCell.xib */; };
 		F36C546C264896F8001C4526 /* CountryItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C546B264896F8001C4526 /* CountryItemViewModel.swift */; };
 		F36C546E26489726001C4526 /* CountryLayoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36C546D26489726001C4526 /* CountryLayoutSection.swift */; };
+		F39E67F7264FF01E002756CC /* StretchyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E67F6264FF01E002756CC /* StretchyHeaderView.swift */; };
+		F39E67F9264FF6B9002756CC /* ProgramDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E67F8264FF6B9002756CC /* ProgramDetailViewController.swift */; };
+		F39E67FD26502BF0002756CC /* StretchyCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E67FC26502BF0002756CC /* StretchyCollectionViewFlowLayout.swift */; };
 		F3E192F2264CBD1700FE0CC8 /* FeaturedSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E192F1264CBD1700FE0CC8 /* FeaturedSectionViewModel.swift */; };
 		F3E192F4264CBD9900FE0CC8 /* DiciplineSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E192F3264CBD9900FE0CC8 /* DiciplineSectionViewModel.swift */; };
 		F3E192F6264CBE1800FE0CC8 /* CountrySectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E192F5264CBE1800FE0CC8 /* CountrySectionViewModel.swift */; };
@@ -104,6 +107,9 @@
 		F36C5468264896C0001C4526 /* ListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 		F36C546B264896F8001C4526 /* CountryItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryItemViewModel.swift; sourceTree = "<group>"; };
 		F36C546D26489726001C4526 /* CountryLayoutSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryLayoutSection.swift; sourceTree = "<group>"; };
+		F39E67F6264FF01E002756CC /* StretchyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderView.swift; sourceTree = "<group>"; };
+		F39E67F8264FF6B9002756CC /* ProgramDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailViewController.swift; sourceTree = "<group>"; };
+		F39E67FC26502BF0002756CC /* StretchyCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StretchyCollectionViewFlowLayout.swift; path = ../../../../../../../Downloads/StretchyCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		F3E192F1264CBD1700FE0CC8 /* FeaturedSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedSectionViewModel.swift; sourceTree = "<group>"; };
 		F3E192F3264CBD9900FE0CC8 /* DiciplineSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiciplineSectionViewModel.swift; sourceTree = "<group>"; };
 		F3E192F5264CBE1800FE0CC8 /* CountrySectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySectionViewModel.swift; sourceTree = "<group>"; };
@@ -229,6 +235,9 @@
 				F3E19305264DA77F00FE0CC8 /* Model */,
 				F3E19304264DA77400FE0CC8 /* View Controllers */,
 				F3E19303264DA76000FE0CC8 /* Section Controllers */,
+				F39E67F6264FF01E002756CC /* StretchyHeaderView.swift */,
+				F39E67FC26502BF0002756CC /* StretchyCollectionViewFlowLayout.swift */,
+				F39E67F8264FF6B9002756CC /* ProgramDetailViewController.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -476,6 +485,7 @@
 				F34919C82649EC8D005464AB /* LayoutSection.swift in Sources */,
 				F36C542E264755D5001C4526 /* XCAssets+Generated.swift in Sources */,
 				F3E192F6264CBE1800FE0CC8 /* CountrySectionViewModel.swift in Sources */,
+				F39E67FD26502BF0002756CC /* StretchyCollectionViewFlowLayout.swift in Sources */,
 				F36C5431264755D5001C4526 /* IB-Segues+Generated.swift in Sources */,
 				F36C543E2647637F001C4526 /* DecideViewController.swift in Sources */,
 				F36C540B26473B12001C4526 /* AppDelegate.swift in Sources */,
@@ -485,9 +495,11 @@
 				F36C54602648922B001C4526 /* DiciplineLayoutSection.swift in Sources */,
 				F36C5440264763A9001C4526 /* ExploreViewController.swift in Sources */,
 				F36C546E26489726001C4526 /* CountryLayoutSection.swift in Sources */,
+				F39E67F7264FF01E002756CC /* StretchyHeaderView.swift in Sources */,
 				F3E19307264DB0EB00FE0CC8 /* ExploreSection.swift in Sources */,
 				F35FEF79264B4E0A0003B042 /* FeaturedSectionController.swift in Sources */,
 				F36C5430264755D5001C4526 /* Strings+Generated.swift in Sources */,
+				F39E67F9264FF6B9002756CC /* ProgramDetailViewController.swift in Sources */,
 				F36C540D26473B12001C4526 /* SceneDelegate.swift in Sources */,
 				F36C542F264755D5001C4526 /* IB-Scenes+Generated.swift in Sources */,
 				F3E192F4264CBD9900FE0CC8 /* DiciplineSectionViewModel.swift in Sources */,
