@@ -9,17 +9,6 @@ import IGListKit
 import UIKit
 
 struct CountryLayoutSection: LayoutSection {
-//    func configureCell(collectionContext: ListCollectionContext, sectionController: ListSectionController, index: Int, item: AnyHashable) -> UICollectionViewCell {
-//        let cell = collectionContext.dequeueReusableCell(withNibName: ListCell.reuseIdentifier, bundle: Bundle.main, for: sectionController, at: index)
-//
-//        if let cell = cell as? ListCell,
-//            let item = item as? CountryCellViewModel {
-//            cell.configure(item)
-//        }
-//
-//        return cell
-//    }
-
     func layoutSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -29,9 +18,5 @@ struct CountryLayoutSection: LayoutSection {
 
         let section = NSCollectionLayoutSection(group: group)
         return section
-    }
-
-    func sectionController() -> ListSectionController {
-        ListSectionController()
     }
 }
