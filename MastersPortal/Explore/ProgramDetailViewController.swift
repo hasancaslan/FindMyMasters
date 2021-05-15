@@ -32,7 +32,7 @@ class ProgramDetailViewController: UIViewController {
     }()
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        .lightContent
     }
 
     override func viewDidLoad() {
@@ -60,7 +60,7 @@ class ProgramDetailViewController: UIViewController {
 
 extension ProgramDetailViewController: UICollectionViewDataSource {
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        return 30
+        30
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -79,7 +79,7 @@ extension ProgramDetailViewController: UICollectionViewDataSource {
 
 extension ProgramDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 2 * padding, height: 44)
+        CGSize(width: view.frame.width - 2 * padding, height: 44)
     }
 
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, referenceSizeForHeaderInSection _: Int) -> CGSize {

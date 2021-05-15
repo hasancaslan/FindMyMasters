@@ -8,8 +8,6 @@
 import UIKit
 
 class FeaturedItemViewModel: NSObject {
-    let identifier = UUID()
-
     var caption: String
     var title: String
     var subtitle: String
@@ -21,12 +19,4 @@ class FeaturedItemViewModel: NSObject {
         self.subtitle = subtitle
         self.thumbnail = thumbnail
     }
-//
-//    func hash(into hasher: inout Hasher) {
-//        hasher.combine(identifier)
-//    }
-//
-//    static func == (lhs: ExtraLargeCellItem, rhs: ExtraLargeCellItem) -> Bool {
-//        return lhs.identifier == rhs.identifier
-//    }
 }

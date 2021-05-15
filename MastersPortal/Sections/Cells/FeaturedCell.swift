@@ -14,7 +14,7 @@ final class FeaturedCell: UICollectionViewCell, ConfigurableCell, ListBindable {
     }
 
     func configure(_ viewModel: FeaturedItemViewModel) {
-        captionLabel.text = viewModel.caption
+        captionLabel.text = viewModel.caption.capitalized
         titleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.subtitle
         thumbnailImageView.image = viewModel.thumbnail

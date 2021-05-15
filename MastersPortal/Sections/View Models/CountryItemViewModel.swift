@@ -8,8 +8,6 @@
 import UIKit
 
 class CountryItemViewModel: NSObject {
-    let identifier = UUID()
-
     var title: String
     var icon: UIImage
 
@@ -17,12 +15,4 @@ class CountryItemViewModel: NSObject {
         self.title = title
         self.icon = icon
     }
-
-//    func hash(into hasher: inout Hasher) {
-//        hasher.combine(identifier)
-//    }
-//
-//    static func == (lhs: ListCellItem, rhs: ListCellItem) -> Bool {
-//        return lhs.identifier == rhs.identifier
-//    }
 }

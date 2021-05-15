@@ -21,7 +21,7 @@ struct TitleLayoutSection: LayoutSection {
 //    }
 
     func sectionController() -> ListSectionController {
-        return ListSectionController()
+        ListSectionController()
     }
 
     func layoutSection() -> NSCollectionLayoutSection {

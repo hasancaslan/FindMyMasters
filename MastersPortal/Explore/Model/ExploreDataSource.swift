@@ -89,7 +89,7 @@ extension ExploreDataSource: ListAdapterDataSource {
     }
 
     func emptyView(for _: ListAdapter) -> UIView? {
-        return nil
+        nil
     }
 }
 
@@ -209,14 +209,14 @@ class ExploreViewModel {
         ]
 
     var featuredViewModel: FeaturedSectionViewModel {
-        return FeaturedSectionViewModel(cells: featuredData)
+        FeaturedSectionViewModel(cells: featuredData)
     }
 
     var diciplineViewModel: DiciplineSectionViewModel {
-        return DiciplineSectionViewModel(cells: diciplinesData)
+        DiciplineSectionViewModel(cells: diciplinesData)
     }
 
     var countryViewModel: CountrySectionViewModel {
-        return CountrySectionViewModel(cells: countryData)
+        CountrySectionViewModel(cells: countryData)
     }
 }

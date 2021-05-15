@@ -11,7 +11,7 @@ class FeaturedSectionViewModel: NSObject {
     let cells: [FeaturedItemViewModel]
 
     var count: Int {
-        return cells.count
+        cells.count
     }
 
     init(cells: [FeaturedItemViewModel]) {

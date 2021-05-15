@@ -11,7 +11,7 @@ class CountrySectionViewModel: NSObject {
     let cells: [CountryItemViewModel]
 
     var count: Int {
-        return cells.count
+        cells.count
     }
 
     init(cells: [CountryItemViewModel]) {

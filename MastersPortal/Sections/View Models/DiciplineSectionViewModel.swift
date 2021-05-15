@@ -11,7 +11,7 @@ class DiciplineSectionViewModel: NSObject {
     let cells: [DiciplineItemViewModel]
 
     var count: Int {
-        return cells.count
+        cells.count
     }
 
     init(cells: [DiciplineItemViewModel]) {

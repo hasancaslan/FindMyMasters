@@ -38,7 +38,7 @@ extension CountriesSectionController: ListBindingSectionControllerDataSource {
     }
 
     func sectionController(_: ListBindingSectionController<ListDiffable>, sizeForViewModel _: Any, at _: Int) -> CGSize {
-        return .zero
+        .zero
     }
 }
 

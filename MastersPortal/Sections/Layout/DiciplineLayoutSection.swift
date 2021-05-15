@@ -34,6 +34,6 @@ struct DiciplineLayoutSection: LayoutSection {
     }
 
     func sectionController() -> ListSectionController {
-        return ListSectionController()
+        ListSectionController()
     }
 }

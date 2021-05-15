@@ -8,7 +8,7 @@
 import IGListKit
 
 extension ConfigurableCell {
-    static var reuseIdentifier: String { return String(describing: Self.self) }
+    static var reuseIdentifier: String { String(describing: Self.self) }
 }
 
 protocol ConfigurableCell {

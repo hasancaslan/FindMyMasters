@@ -32,6 +32,6 @@ struct CountryLayoutSection: LayoutSection {
     }
 
     func sectionController() -> ListSectionController {
-        return ListSectionController()
+        ListSectionController()
     }
 }

@@ -8,8 +8,6 @@
 import UIKit
 
 class DiciplineItemViewModel: NSObject {
-    let identifier = UUID()
-
     var buttonTitle: String
     var title: String
     var subtitle: String
@@ -21,12 +19,4 @@ class DiciplineItemViewModel: NSObject {
         self.icon = icon
         self.buttonTitle = buttonTitle
     }
-
-//    func hash(into hasher: inout Hasher) {
-//        hasher.combine(identifier)
-//    }
-//
-//    static func == (lhs: SmallCellItem, rhs: SmallCellItem) -> Bool {
-//        return lhs.identifier == rhs.identifier
-//    }
 }

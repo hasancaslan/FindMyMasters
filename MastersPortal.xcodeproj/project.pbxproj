@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0D491E0E34E74A963A4E6C51 /* Pods_MastersPortal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6515EA2DEE80100191E898C /* Pods_MastersPortal.framework */; };
 		F34919C82649EC8D005464AB /* LayoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34919C72649EC8D005464AB /* LayoutSection.swift */; };
-		F34919CC264A1220005464AB /* SectionHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34919CB264A1220005464AB /* SectionHeaderViewModel.swift */; };
 		F35FEF77264B38E30003B042 /* NSObject+ListDiffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35FEF76264B38E30003B042 /* NSObject+ListDiffable.swift */; };
 		F35FEF79264B4E0A0003B042 /* FeaturedSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35FEF78264B4E0A0003B042 /* FeaturedSectionController.swift */; };
 		F35FEF7B264B4E260003B042 /* TitleSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35FEF7A264B4E260003B042 /* TitleSectionController.swift */; };
@@ -53,6 +52,8 @@
 		F39E67F7264FF01E002756CC /* StretchyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E67F6264FF01E002756CC /* StretchyHeaderView.swift */; };
 		F39E67F9264FF6B9002756CC /* ProgramDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E67F8264FF6B9002756CC /* ProgramDetailViewController.swift */; };
 		F39E67FD26502BF0002756CC /* StretchyCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E67FC26502BF0002756CC /* StretchyCollectionViewFlowLayout.swift */; };
+		F39E67FF26508AF8002756CC /* ProgramDetailTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F39E67FE26508AF8002756CC /* ProgramDetailTitleCell.xib */; };
+		F39E680126508B11002756CC /* ProgramDetailTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E680026508B11002756CC /* ProgramDetailTitleCell.swift */; };
 		F3E192F2264CBD1700FE0CC8 /* FeaturedSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E192F1264CBD1700FE0CC8 /* FeaturedSectionViewModel.swift */; };
 		F3E192F4264CBD9900FE0CC8 /* DiciplineSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E192F3264CBD9900FE0CC8 /* DiciplineSectionViewModel.swift */; };
 		F3E192F6264CBE1800FE0CC8 /* CountrySectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E192F5264CBE1800FE0CC8 /* CountrySectionViewModel.swift */; };
@@ -64,7 +65,6 @@
 		32AE47F150A5AC7BBD46E732 /* Pods-MastersPortal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MastersPortal.debug.xcconfig"; path = "Target Support Files/Pods-MastersPortal/Pods-MastersPortal.debug.xcconfig"; sourceTree = "<group>"; };
 		C6515EA2DEE80100191E898C /* Pods_MastersPortal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MastersPortal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F34919C72649EC8D005464AB /* LayoutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSection.swift; sourceTree = "<group>"; };
-		F34919CB264A1220005464AB /* SectionHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderViewModel.swift; sourceTree = "<group>"; };
 		F35FEF76264B38E30003B042 /* NSObject+ListDiffable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ListDiffable.swift"; sourceTree = "<group>"; };
 		F35FEF78264B4E0A0003B042 /* FeaturedSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedSectionController.swift; sourceTree = "<group>"; };
 		F35FEF7A264B4E260003B042 /* TitleSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSectionController.swift; sourceTree = "<group>"; };
@@ -110,6 +110,8 @@
 		F39E67F6264FF01E002756CC /* StretchyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderView.swift; sourceTree = "<group>"; };
 		F39E67F8264FF6B9002756CC /* ProgramDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailViewController.swift; sourceTree = "<group>"; };
 		F39E67FC26502BF0002756CC /* StretchyCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StretchyCollectionViewFlowLayout.swift; path = ../../../../../../../Downloads/StretchyCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		F39E67FE26508AF8002756CC /* ProgramDetailTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgramDetailTitleCell.xib; sourceTree = "<group>"; };
+		F39E680026508B11002756CC /* ProgramDetailTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailTitleCell.swift; sourceTree = "<group>"; };
 		F3E192F1264CBD1700FE0CC8 /* FeaturedSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedSectionViewModel.swift; sourceTree = "<group>"; };
 		F3E192F3264CBD9900FE0CC8 /* DiciplineSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiciplineSectionViewModel.swift; sourceTree = "<group>"; };
 		F3E192F5264CBE1800FE0CC8 /* CountrySectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySectionViewModel.swift; sourceTree = "<group>"; };
@@ -292,6 +294,8 @@
 				F36C546226489236001C4526 /* SmallCell.xib */,
 				F36C5467264896C0001C4526 /* ListCell.swift */,
 				F36C5468264896C0001C4526 /* ListCell.xib */,
+				F39E67FE26508AF8002756CC /* ProgramDetailTitleCell.xib */,
+				F39E680026508B11002756CC /* ProgramDetailTitleCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -300,11 +304,10 @@
 			isa = PBXGroup;
 			children = (
 				F36C545D26489011001C4526 /* SectionTitleViewModel.swift */,
-				F36C546526489265001C4526 /* DiciplineItemViewModel.swift */,
-				F36C546B264896F8001C4526 /* CountryItemViewModel.swift */,
-				F34919CB264A1220005464AB /* SectionHeaderViewModel.swift */,
 				F3E192F3264CBD9900FE0CC8 /* DiciplineSectionViewModel.swift */,
+				F36C546526489265001C4526 /* DiciplineItemViewModel.swift */,
 				F3E192F5264CBE1800FE0CC8 /* CountrySectionViewModel.swift */,
+				F36C546B264896F8001C4526 /* CountryItemViewModel.swift */,
 				F3E192F1264CBD1700FE0CC8 /* FeaturedSectionViewModel.swift */,
 				F36C545526487AE4001C4526 /* FeaturedItemViewModel.swift */,
 				F35FEF76264B38E30003B042 /* NSObject+ListDiffable.swift */,
@@ -410,6 +413,7 @@
 				F36C545326487999001C4526 /* FeaturedCell.xib in Resources */,
 				F36C5427264755B6001C4526 /* Localizable.strings in Resources */,
 				F36C543526476150001C4526 /* Explore.storyboard in Resources */,
+				F39E67FF26508AF8002756CC /* ProgramDetailTitleCell.xib in Resources */,
 				F36C545C26488FDE001C4526 /* SectionTitleCell.xib in Resources */,
 				F36C546A264896C0001C4526 /* ListCell.xib in Resources */,
 				F36C541426473B17001C4526 /* Assets.xcassets in Resources */,
@@ -470,7 +474,6 @@
 			files = (
 				F36C546C264896F8001C4526 /* CountryItemViewModel.swift in Sources */,
 				F36C5469264896C0001C4526 /* ListCell.swift in Sources */,
-				F34919CC264A1220005464AB /* SectionHeaderViewModel.swift in Sources */,
 				F35FEF7B264B4E260003B042 /* TitleSectionController.swift in Sources */,
 				F36C545626487AE4001C4526 /* FeaturedItemViewModel.swift in Sources */,
 				F36C545826488FD0001C4526 /* TitleLayoutSection.swift in Sources */,
@@ -482,6 +485,7 @@
 				F35FEF7D264B4E5C0003B042 /* DiciplinesSectionController.swift in Sources */,
 				F36C544D26483A29001C4526 /* ConfigurableCell.swift in Sources */,
 				F36C546326489236001C4526 /* SmallCell.swift in Sources */,
+				F39E680126508B11002756CC /* ProgramDetailTitleCell.swift in Sources */,
 				F34919C82649EC8D005464AB /* LayoutSection.swift in Sources */,
 				F36C542E264755D5001C4526 /* XCAssets+Generated.swift in Sources */,
 				F3E192F6264CBE1800FE0CC8 /* CountrySectionViewModel.swift in Sources */,
