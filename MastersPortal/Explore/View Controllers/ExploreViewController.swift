@@ -21,9 +21,9 @@ class ExploreViewController: UIViewController {
 
     lazy var collectionViewLayout: UICollectionViewLayout = {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, _ -> NSCollectionLayoutSection? in
-            let section = self.dataSource.sections[sectionIndex]
-            return self.dataSource.layoutSection(for: section)
+            self.dataSource.layout(at: sectionIndex)
         }
+
         return layout
     }()
 
@@ -51,7 +51,7 @@ class ExploreViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 

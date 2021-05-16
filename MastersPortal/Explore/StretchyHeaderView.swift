@@ -54,14 +54,14 @@ class StretchyHeaderView: UICollectionReusableView, ConfigurableCell {
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
 
         NSLayoutConstraint.activate([
             visualEffectView.topAnchor.constraint(equalTo: topAnchor),
             visualEffectView.leadingAnchor.constraint(equalTo: leadingAnchor),
             visualEffectView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            visualEffectView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            visualEffectView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
 

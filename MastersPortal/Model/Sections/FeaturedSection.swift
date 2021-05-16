@@ -1,15 +1,14 @@
 //
-//  FeaturedLayoutSection.swift
+//  FeaturedSection.swift
 //  MastersPortal
 //
-//  Created by HASAN CAN on 9/5/21.
+//  Created by HASAN CAN on 16/5/21.
 //
 
 import IGListKit
-import UIKit
 
-struct FeaturedLayoutSection: LayoutSection {
-    func layoutSection() -> NSCollectionLayoutSection {
+struct FeaturedSection: Section {
+    var layoutSection: NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
@@ -20,5 +19,13 @@ struct FeaturedLayoutSection: LayoutSection {
         section.orthogonalScrollingBehavior = .groupPagingCentered
 
         return section
+    }
+
+    var sectionController: ListSectionController
+    var viewModel: ListDiffable
+
+    init(_ viewModel: FeaturedSectionViewModel) {
+        self.viewModel = viewModel
+        sectionController = FeaturedSectionController()
     }
 }

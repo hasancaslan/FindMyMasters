@@ -9,11 +9,9 @@ import IGListKit
 import UIKit
 
 class CountriesSectionController: ListBindingSectionController<CountryItemViewModel> {
-    var layoutSection: LayoutSection
     var viewModel: CountrySectionViewModel?
 
     override init() {
-        layoutSection = CountryLayoutSection()
         super.init()
         dataSource = self
         selectionDelegate = self

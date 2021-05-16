@@ -10,59 +10,19 @@ import IGListKit
 
 class ExploreDataSource: NSObject {
     let viewModel: ExploreViewModel
-    var sections: [ExploreSection]
 
-    init(viewModel: ExploreViewModel, sections: [ExploreSection]) {
+    init(_ viewModel: ExploreViewModel) {
         self.viewModel = viewModel
-        self.sections = sections
     }
 
     override convenience init() {
-        let _sections: [ExploreSection] = [.featured, .diciplinesTitle, .diciplines, .countriesTitle, .countries]
         let _viewModel = ExploreViewModel()
-        self.init(viewModel: _viewModel, sections: _sections)
+        self.init(_viewModel)
     }
 
-    func layoutSection(for section: ExploreSection) -> NSCollectionLayoutSection {
-        layout(for: section).layoutSection()
-    }
-
-    func layout(for section: ExploreSection) -> LayoutSection {
-        switch section {
-        case .featured:
-            return FeaturedLayoutSection()
-
-        case .diciplinesTitle:
-            return TitleLayoutSection()
-
-        case .diciplines:
-            return DiciplineLayoutSection()
-
-        case .countriesTitle:
-            return TitleLayoutSection()
-
-        case .countries:
-            return CountryLayoutSection()
-        }
-    }
-
-    func model(for section: ExploreSection) -> ListDiffable {
-        switch section {
-        case .featured:
-            return viewModel.featuredViewModel
-
-        case .diciplinesTitle:
-            return viewModel.diciplinesTitle
-
-        case .diciplines:
-            return viewModel.diciplineViewModel
-
-        case .countriesTitle:
-            return viewModel.countriesTitle
-
-        case .countries:
-            return viewModel.countryViewModel
-        }
+    func layout(at index: Int) -> NSCollectionLayoutSection? {
+        guard viewModel.sections.indices.contains(index) else { return nil }
+        return viewModel.sections[index].layoutSection
     }
 }
 
@@ -70,22 +30,13 @@ class ExploreDataSource: NSObject {
 
 extension ExploreDataSource: ListAdapterDataSource {
     func objects(for _: ListAdapter) -> [ListDiffable] {
-        let viewModel = ExploreViewModel()
-        let items: [ListDiffable] =
-            [viewModel.featuredViewModel, viewModel.diciplinesTitle, viewModel.diciplineViewModel, viewModel.countriesTitle, viewModel.countryViewModel] as [ListDiffable]
-        return items
+        viewModel.sections.map(\.viewModel)
     }
 
     func listAdapter(_: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        if object is FeaturedSectionViewModel {
-            return FeaturedSectionController()
-        } else if object is DiciplineSectionViewModel {
-            return DiciplinesSectionController()
-        } else if object is CountrySectionViewModel {
-            return CountriesSectionController()
-        } else {
-            return TitleSectionController()
-        }
+        let result = viewModel.sections.filter { type(of: object) == type(of: $0.viewModel) }
+        guard let controller = result.first else { fatalError("Section Controller not exist for \(object).") }
+        return controller.sectionController
     }
 
     func emptyView(for _: ListAdapter) -> UIView? {
@@ -125,10 +76,10 @@ class ExploreViewModel {
                 title: "Cyber Security",
                 subtitle: "Koç University",
                 thumbnail: Asset.DemoImages.kuCyber.image
-            ),
+            )
         ]
 
-    let diciplinesTitle =
+    private let diciplinesTitle =
         SectionTitleViewModel(
             title: "Diciplines",
             navigationTitle: "See All"
@@ -171,10 +122,10 @@ class ExploreViewModel {
                 subtitle: "1234 Programs",
                 icon: UIImage(systemName: "desktopcomputer")!,
                 buttonTitle: "Browse"
-            ),
+            )
         ]
 
-    let countriesTitle =
+    private let countriesTitle =
         SectionTitleViewModel(
             title: "Countries",
             navigationTitle: "See All"
@@ -205,18 +156,28 @@ class ExploreViewModel {
             CountryItemViewModel(
                 title: "Turkey",
                 icon: UIImage()
-            ),
+            )
         ]
 
-    var featuredViewModel: FeaturedSectionViewModel {
+    private var featuredViewModel: FeaturedSectionViewModel {
         FeaturedSectionViewModel(cells: featuredData)
     }
 
-    var diciplineViewModel: DiciplineSectionViewModel {
+    private var diciplineViewModel: DiciplineSectionViewModel {
         DiciplineSectionViewModel(cells: diciplinesData)
     }
 
-    var countryViewModel: CountrySectionViewModel {
+    private var countryViewModel: CountrySectionViewModel {
         CountrySectionViewModel(cells: countryData)
+    }
+
+    var sections: [Section] {
+        [
+            FeaturedSection(featuredViewModel),
+            SectionTitleSection(diciplinesTitle),
+            DiciplinesSection(diciplineViewModel),
+            SectionTitleSection(countriesTitle),
+            CountriesSection(countryViewModel)
+        ]
     }
 }

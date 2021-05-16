@@ -1,15 +1,14 @@
 //
-//  CountryLayoutSection.swift
+//  CountriesSection.swift
 //  MastersPortal
 //
-//  Created by HASAN CAN on 9/5/21.
+//  Created by HASAN CAN on 16/5/21.
 //
 
 import IGListKit
-import UIKit
 
-struct CountryLayoutSection: LayoutSection {
-    func layoutSection() -> NSCollectionLayoutSection {
+struct CountriesSection: Section {
+    var layoutSection: NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
@@ -18,5 +17,13 @@ struct CountryLayoutSection: LayoutSection {
 
         let section = NSCollectionLayoutSection(group: group)
         return section
+    }
+
+    var sectionController: ListSectionController
+    var viewModel: ListDiffable
+
+    init(_ viewModel: CountrySectionViewModel) {
+        self.viewModel = viewModel
+        sectionController = CountriesSectionController()
     }
 }

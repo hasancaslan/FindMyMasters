@@ -9,14 +9,7 @@ import IGListKit
 import UIKit
 
 class TitleSectionController: ListSectionController {
-    var layoutSection: LayoutSection
-
     var viewModel: SectionTitleViewModel?
-
-    override init() {
-        layoutSection = TitleLayoutSection()
-        super.init()
-    }
 }
 
 // MARK: - Data Provider
