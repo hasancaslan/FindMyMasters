@@ -5,30 +5,47 @@
 //  Created by HASAN CAN on 15/5/21.
 //
 
-import UIKit
+import IGListKit
 
 class ProgramDetailViewController: UIViewController {
     let padding: CGFloat = 20
     private var headerView: StretchyHeaderView?
+    let viewModel: ListAdapterViewModel = BaseListAdapterViewModel(MockExploreViewModel().sections)
 
     lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: StretchyCollectionViewFlowLayout())
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         collectionView.backgroundColor = .systemBackground
-        collectionView.contentInsetAdjustmentBehavior = .never
-
-        collectionView.delegate = self
-        collectionView.dataSource = self
 
         collectionView.register(
-            StretchyHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StretchyHeaderView.reuseIdentifier
-        )
+            StretchyHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StretchyHeaderView.reuseIdentifier)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CollectionCell")
-        if let layout = collectionView.collectionViewLayout as? StretchyCollectionViewFlowLayout {
+
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.minimumLineSpacing = 10
             layout.sectionInset = .init(top: 0, left: 20, bottom: 20, right: 20)
         }
 
         return collectionView
+    }()
+
+    lazy var collectionViewLayout: UICollectionViewLayout = {
+        let layout = StretchyCollectionViewFlowLayout { sectionIndex, _ -> NSCollectionLayoutSection? in
+            var section = self.viewModel.layout(at: sectionIndex)
+            if sectionIndex == 0 {
+                let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
+                let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerItemSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+                section?.boundarySupplementaryItems = [headerItem]
+            }
+
+            return section
+        }
+
+        return layout
+    }()
+
+    lazy var adapter: ListAdapter = {
+        let adapter = ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 0)
+        return adapter
     }()
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -38,6 +55,9 @@ class ProgramDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addCollectionView()
+
+        adapter.collectionView = collectionView
+        adapter.dataSource = viewModel
     }
 
     private func addCollectionView() {
@@ -48,13 +68,8 @@ class ProgramDetailViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-    }
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        collectionView.collectionViewLayout.invalidateLayout()
     }
 }
 
@@ -71,6 +86,9 @@ extension ProgramDetailViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.item == 0 {
+            return collectionView.dequeueReusableCell(withReuseIdentifier: QuickFactCell.reuseIdentifier, for: indexPath)
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath)
         cell.backgroundColor = .black
         return cell
@@ -92,8 +110,6 @@ extension ProgramDetailViewController: UICollectionViewDelegateFlowLayout {
 extension ProgramDetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffsetY = scrollView.contentOffset.y
-        print(headerView?.animator.fractionComplete ?? "")
-        print(contentOffsetY)
         if contentOffsetY < -padding {
             headerView?.animator.fractionComplete = abs(contentOffsetY) / 200
         } else {

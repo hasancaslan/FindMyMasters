@@ -12,3 +12,4 @@ protocol Section {
     var viewModel: ListDiffable { get set }
     var sectionController: ListSectionController { get }
 }
+

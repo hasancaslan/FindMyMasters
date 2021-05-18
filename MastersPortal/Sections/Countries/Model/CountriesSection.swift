@@ -7,6 +7,8 @@
 
 import IGListKit
 
+typealias CountriesSectionViewModel = SectionViewModel<CountryItemViewModel>
+
 struct CountriesSection: Section {
     var layoutSection: NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
@@ -22,7 +24,7 @@ struct CountriesSection: Section {
     var sectionController: ListSectionController
     var viewModel: ListDiffable
 
-    init(_ viewModel: CountrySectionViewModel) {
+    init(_ viewModel: CountriesSectionViewModel) {
         self.viewModel = viewModel
         sectionController = CountriesSectionController()
     }

@@ -7,6 +7,8 @@
 
 import IGListKit
 
+typealias QuickFactSectionViewModel = SectionViewModel<QuickFactItemViewModel>
+
 struct QuickFactSection: Section {
     var layoutSection: NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.92), heightDimension: .fractionalHeight(0.92))

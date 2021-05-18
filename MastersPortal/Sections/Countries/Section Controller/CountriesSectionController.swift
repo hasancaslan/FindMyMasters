@@ -9,7 +9,10 @@ import IGListKit
 import UIKit
 
 class CountriesSectionController: ListBindingSectionController<CountryItemViewModel> {
-    var viewModel: CountrySectionViewModel?
+    typealias ViewModelType = CountriesSectionViewModel
+    typealias CellType = ListCell
+    
+    var viewModel: ViewModelType?
 
     override init() {
         super.init()
@@ -22,13 +25,13 @@ class CountriesSectionController: ListBindingSectionController<CountryItemViewMo
 
 extension CountriesSectionController: ListBindingSectionControllerDataSource {
     func sectionController(_: ListBindingSectionController<ListDiffable>, viewModelsFor object: Any) -> [ListDiffable] {
-        guard let object = object as? CountrySectionViewModel else { fatalError() }
+        guard let object = object as? ViewModelType else { fatalError() }
         viewModel = object
         return object.cells
     }
 
     func sectionController(_: ListBindingSectionController<ListDiffable>, cellForViewModel _: Any, at index: Int) -> UICollectionViewCell & ListBindable {
-        guard let cell = collectionContext?.dequeueReusableCell(withNibName: ListCell.reuseIdentifier, bundle: nil, for: self, at: index) as? ListCell else {
+        guard let cell = collectionContext?.dequeueReusableCell(withNibName: CellType.reuseIdentifier, bundle: nil, for: self, at: index) as? CellType else {
             fatalError("Could not return a Featured Cell")
         }
 

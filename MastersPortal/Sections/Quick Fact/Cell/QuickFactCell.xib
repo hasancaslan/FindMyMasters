@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,6 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="b4h-5f-BRj" firstAttribute="bottom" secondItem="DYg-he-g75" secondAttribute="bottom" id="5ec-UN-Vyi"/>
                     <constraint firstItem="477-kp-5Oy" firstAttribute="top" secondItem="DYg-he-g75" secondAttribute="top" id="K52-Cc-UXm"/>
@@ -56,4 +58,9 @@
             <point key="canvasLocation" x="-176.08695652173915" y="126.5625"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

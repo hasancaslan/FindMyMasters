@@ -8,7 +8,10 @@
 import IGListKit
 
 class DiciplinesSectionController: ListBindingSectionController<DiciplineItemViewModel> {
-    var viewModel: DiciplineSectionViewModel?
+    typealias ViewModelType = SectionViewModel<DiciplineItemViewModel>
+    typealias CellType = SmallCell
+
+    var viewModel: ViewModelType?
 
     override init() {
         super.init()
@@ -21,13 +24,13 @@ class DiciplinesSectionController: ListBindingSectionController<DiciplineItemVie
 
 extension DiciplinesSectionController: ListBindingSectionControllerDataSource {
     func sectionController(_: ListBindingSectionController<ListDiffable>, viewModelsFor object: Any) -> [ListDiffable] {
-        guard let object = object as? DiciplineSectionViewModel else { fatalError() }
+        guard let object = object as? ViewModelType else { fatalError() }
         viewModel = object
         return object.cells
     }
 
     func sectionController(_: ListBindingSectionController<ListDiffable>, cellForViewModel _: Any, at index: Int) -> UICollectionViewCell & ListBindable {
-        guard let cell = collectionContext?.dequeueReusableCell(withNibName: SmallCell.reuseIdentifier, bundle: nil, for: self, at: index) as? SmallCell else {
+        guard let cell = collectionContext?.dequeueReusableCell(withNibName: CellType.reuseIdentifier, bundle: nil, for: self, at: index) as? CellType else {
             fatalError("Could not return a Featured Cell")
         }
         return cell

@@ -8,10 +8,10 @@
 import IGListKit
 
 class QuickFactSectionController: ListBindingSectionController<QuickFactItemViewModel> {
-    typealias SectionDataType = QuickFactSectionViewModel
+    typealias ViewModelType = QuickFactSectionViewModel
     typealias CellType = QuickFactCell
 
-    var viewModel: SectionDataType?
+    var viewModel: ViewModelType?
 
     override init() {
         super.init()
@@ -24,7 +24,7 @@ class QuickFactSectionController: ListBindingSectionController<QuickFactItemView
 
 extension QuickFactSectionController: ListBindingSectionControllerDataSource {
     func sectionController(_: ListBindingSectionController<ListDiffable>, viewModelsFor object: Any) -> [ListDiffable] {
-        guard let object = object as? SectionDataType else { fatalError() }
+        guard let object = object as? ViewModelType else { fatalError() }
         viewModel = object
         return object.cells
     }

@@ -16,6 +16,7 @@ class QuickFactCell: UICollectionViewCell, ConfigurableCell, ListBindable {
         titleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.subtitle
         iconImageView.image = viewModel.icon
+        layer.cornerRadius = 13
     }
 
     func bindViewModel(_ viewModel: Any) {

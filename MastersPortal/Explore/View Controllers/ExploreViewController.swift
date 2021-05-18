@@ -9,19 +9,18 @@ import IGListKit
 import UIKit
 
 class ExploreViewController: UIViewController {
-    let dataSource = ExploreDataSource()
+    let viewModel = BaseListAdapterViewModel(MockExploreViewModel().sections)
 
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         collectionView.backgroundColor = .systemBackground
-        collectionView.delegate = self
 
         return collectionView
     }()
 
     lazy var collectionViewLayout: UICollectionViewLayout = {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, _ -> NSCollectionLayoutSection? in
-            self.dataSource.layout(at: sectionIndex)
+            self.viewModel.layout(at: sectionIndex)
         }
 
         return layout
@@ -40,7 +39,7 @@ class ExploreViewController: UIViewController {
         addCollectionView()
 
         adapter.collectionView = collectionView
-        adapter.dataSource = dataSource
+        adapter.dataSource = viewModel
     }
 
     private func addCollectionView() {
@@ -51,7 +50,7 @@ class ExploreViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
 
@@ -68,11 +67,5 @@ class ExploreViewController: UIViewController {
             // Workaround for incorrect initial offset by `.groupPagingCentered`
             collectionView.reloadData()
         }
-    }
-}
-
-extension ExploreViewController: UICollectionViewDelegate {
-    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
     }
 }
