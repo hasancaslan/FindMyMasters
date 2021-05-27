@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Zaz-cJ-qXd" customClass="SectionTitleCell" customModule="MastersPortal" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EaC-SZ-KDq">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQl-M7-vRZ">
+                        <rect key="frame" x="20" y="14.5" width="46" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHv-41-wTn">
+                        <rect key="frame" x="302" y="8.5" width="53" height="33"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <state key="normal" title="See All">
+                            <color key="titleColor" name="PrimaryColor"/>
+                        </state>
+                        <connections>
+                            <action selector="onNavigation:" destination="Zaz-cJ-qXd" eventType="touchUpInside" id="d7M-Kd-imU"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wHv-41-wTn" firstAttribute="centerY" secondItem="MQl-M7-vRZ" secondAttribute="centerY" id="0qU-i3-2Yd"/>
+                    <constraint firstItem="MQl-M7-vRZ" firstAttribute="leading" secondItem="EaC-SZ-KDq" secondAttribute="leading" constant="20" id="8fX-uU-nGH"/>
+                    <constraint firstAttribute="trailing" secondItem="wHv-41-wTn" secondAttribute="trailing" constant="20" id="GuK-Ag-IEU"/>
+                    <constraint firstItem="MQl-M7-vRZ" firstAttribute="centerY" secondItem="EaC-SZ-KDq" secondAttribute="centerY" id="vk9-9W-81e"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <connections>
+                <outlet property="navigationButton" destination="wHv-41-wTn" id="1Wc-HG-eb3"/>
+                <outlet property="titleLabel" destination="MQl-M7-vRZ" id="Krl-PB-MEp"/>
+            </connections>
+            <point key="canvasLocation" x="-65.94202898550725" y="201.5625"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="PrimaryColor">
+            <color red="0.74099999666213989" green="0.125" blue="0.18400000035762787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

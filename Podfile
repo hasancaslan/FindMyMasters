@@ -17,6 +17,7 @@ target 'MastersPortal' do
   pod 'Cards'
   pod 'SwiftMessages'
   pod 'BulletinBoard'
+  pod 'Eureka'
 
   # animations
   pod 'ViewAnimator'
