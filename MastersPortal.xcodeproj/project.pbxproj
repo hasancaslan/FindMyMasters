@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0D491E0E34E74A963A4E6C51 /* Pods_MastersPortal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6515EA2DEE80100191E898C /* Pods_MastersPortal.framework */; };
+		F3115C712666EAE20057569D /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3115C702666EAE20057569D /* Place.swift */; };
+		F3115C732666EB040057569D /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3115C722666EB040057569D /* City.swift */; };
+		F3115C752666EB100057569D /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3115C742666EB100057569D /* Term.swift */; };
+		F3115C772666EB180057569D /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3115C762666EB180057569D /* Application.swift */; };
+		F3115C792666EB200057569D /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3115C782666EB200057569D /* Student.swift */; };
 		F31E83C226516FFC001AE0FF /* FeaturedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31E83C126516FFB001AE0FF /* FeaturedSection.swift */; };
 		F31E83C42651703D001AE0FF /* SectionTitleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31E83C32651703D001AE0FF /* SectionTitleSection.swift */; };
 		F31E83C626517058001AE0FF /* DiciplinesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31E83C526517058001AE0FF /* DiciplinesSection.swift */; };
@@ -72,6 +77,11 @@
 		13F0DF26CAA92C172F0C0AB5 /* Pods-MastersPortal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MastersPortal.release.xcconfig"; path = "Target Support Files/Pods-MastersPortal/Pods-MastersPortal.release.xcconfig"; sourceTree = "<group>"; };
 		32AE47F150A5AC7BBD46E732 /* Pods-MastersPortal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MastersPortal.debug.xcconfig"; path = "Target Support Files/Pods-MastersPortal/Pods-MastersPortal.debug.xcconfig"; sourceTree = "<group>"; };
 		C6515EA2DEE80100191E898C /* Pods_MastersPortal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MastersPortal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3115C702666EAE20057569D /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		F3115C722666EB040057569D /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		F3115C742666EB100057569D /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
+		F3115C762666EB180057569D /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		F3115C782666EB200057569D /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		F31E83C126516FFB001AE0FF /* FeaturedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedSection.swift; sourceTree = "<group>"; };
 		F31E83C32651703D001AE0FF /* SectionTitleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleSection.swift; sourceTree = "<group>"; };
 		F31E83C526517058001AE0FF /* DiciplinesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiciplinesSection.swift; sourceTree = "<group>"; };
@@ -203,7 +213,6 @@
 				F31E83C926517087001AE0FF /* CollectionSection.swift */,
 				F36C544C26483A29001C4526 /* ConfigurableCell.swift */,
 				F31FE5E22651F160005DCD14 /* ListAdapterViewModel.swift */,
-				F35FEF76264B38E30003B042 /* NSObject+ListDiffable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -256,6 +265,7 @@
 		F348CF322660548500440106 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F35FEF76264B38E30003B042 /* NSObject+ListDiffable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,6 +372,11 @@
 				F33B5885265DABF100832F88 /* Mock */,
 				F348CF1C265FA51C00440106 /* Sections */,
 				F39E680226508DC0002756CC /* Program.swift */,
+				F3115C722666EB040057569D /* City.swift */,
+				F3115C702666EAE20057569D /* Place.swift */,
+				F3115C742666EB100057569D /* Term.swift */,
+				F3115C762666EB180057569D /* Application.swift */,
+				F3115C782666EB200057569D /* Student.swift */,
 				F31FE5E42651F179005DCD14 /* SimpleListAdapterViewModel.swift */,
 			);
 			path = Models;
@@ -538,10 +553,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3115C772666EB180057569D /* Application.swift in Sources */,
 				F31E83CA26517087001AE0FF /* CollectionSection.swift in Sources */,
 				F36C546C264896F8001C4526 /* CountryItemViewModel.swift in Sources */,
 				F31FE5E32651F160005DCD14 /* ListAdapterViewModel.swift in Sources */,
 				F31E83C626517058001AE0FF /* DiciplinesSection.swift in Sources */,
+				F3115C732666EB040057569D /* City.swift in Sources */,
 				F36C5469264896C0001C4526 /* ListCell.swift in Sources */,
 				F35FEF7B264B4E260003B042 /* TitleSectionController.swift in Sources */,
 				F36C545626487AE4001C4526 /* FeaturedItemViewModel.swift in Sources */,
@@ -553,7 +570,9 @@
 				F36C544D26483A29001C4526 /* ConfigurableCell.swift in Sources */,
 				F36C546326489236001C4526 /* SmallCell.swift in Sources */,
 				F39E680126508B11002756CC /* ProgramDetailTitleCell.swift in Sources */,
+				F3115C752666EB100057569D /* Term.swift in Sources */,
 				F31E83C42651703D001AE0FF /* SectionTitleSection.swift in Sources */,
+				F3115C792666EB200057569D /* Student.swift in Sources */,
 				F36C542E264755D5001C4526 /* XCAssets+Generated.swift in Sources */,
 				F31E83C826517079001AE0FF /* CountriesSection.swift in Sources */,
 				F35C539C2652F8A8007FB3EA /* SectionViewModel.swift in Sources */,
@@ -562,6 +581,7 @@
 				F36C5431264755D5001C4526 /* IB-Segues+Generated.swift in Sources */,
 				F36C543E2647637F001C4526 /* DecideViewController.swift in Sources */,
 				F31FE5E52651F179005DCD14 /* SimpleListAdapterViewModel.swift in Sources */,
+				F3115C712666EAE20057569D /* Place.swift in Sources */,
 				F31E83D02651769B001AE0FF /* QuickFactCell.swift in Sources */,
 				F33B5882265D992500832F88 /* ApplyViewController.swift in Sources */,
 				F31E83D826517BDA001AE0FF /* QuickFactSectionController.swift in Sources */,
