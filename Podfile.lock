@@ -4,10 +4,7 @@ PODS:
   - IGListDiffKit (4.0.0)
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
-  - JGProgressHUD (2.2)
   - Parchment (3.0.1)
-  - PKHUD (5.3.0)
-  - SkeletonView (1.15.0)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
@@ -16,10 +13,7 @@ DEPENDENCIES:
   - Eureka
   - FlagKit
   - IGListKit
-  - JGProgressHUD
   - Parchment
-  - PKHUD
-  - SkeletonView
   - SQLite.swift
 
 SPEC REPOS:
@@ -28,10 +22,7 @@ SPEC REPOS:
     - FlagKit
     - IGListDiffKit
     - IGListKit
-    - JGProgressHUD
     - Parchment
-    - PKHUD
-    - SkeletonView
     - SQLite.swift
 
 SPEC CHECKSUMS:
@@ -39,12 +30,9 @@ SPEC CHECKSUMS:
   FlagKit: eca7dc89064b0c986302ba9acefad1bf80a435b1
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
-  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   Parchment: 466a1cfb6151780db8acb4bbedc2d9c6bfa1e2ff
-  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
-  SkeletonView: cac18a3ac4f893b09d99e65072d806ef08377aae
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
 
-PODFILE CHECKSUM: 18e471beeff956b1fa8fbbc0fc243bf99001c59f
+PODFILE CHECKSUM: dc717fd6acbae008cee704129229573c6fbbd0aa
 
 COCOAPODS: 1.10.1

@@ -102,6 +102,57 @@ final class DatabaseService {
         }
     }
 
+    public func getCheapestUniversitiesInField(field: String) -> [CheapProgramDataContainer]? {
+        guard let db = DB else {
+            connectionError()
+            return nil
+        }
+        let query = """
+        SELECT *
+        FROM (SELECT tution_1_currency               as currency,
+                     tution_1_money + tution_2_money as total,
+                     country_name,
+                     university_name,
+                     program_name
+              FROM Terms
+                       NATURAL JOIN Places
+              WHERE program_name LIKE '%\(field)%'
+              GROUP BY country_name, total) as q
+        WHERE 2 >= (SELECT count(*)
+                    FROM (SELECT tution_1_currency               as currency,
+                                 tution_1_money + tution_2_money as total,
+                                 country_name,
+                                 university_name,
+                                 program_name
+                          FROM Terms
+                                   NATURAL JOIN Places
+                          WHERE program_name LIKE '%\(field)%'
+                          GROUP BY country_name, total) as q2
+                    WHERE q.country_name = q2.country_name
+                      AND q2.total < q.total)
+        ORDER BY total ASC;
+
+        """
+
+        do {
+            let stmt = try db.prepare(query)
+            var programs = [CheapProgramDataContainer]()
+            for row in stmt {
+                programs.append(CheapProgramDataContainer(currency: row[0] as! String,
+                                                          total: Int(row[1] as! Int64),
+                                                          countryName: row[2] as! String,
+                                                          universityName: row[3] as! String,
+                                                          programName: row[4] as! String))
+            }
+
+            return programs
+        } catch {
+            decodeError(table: "CHEAP PROGRAM", error: error)
+        }
+
+        return nil
+    }
+
     public func getAllProgramsInCity(name: String, country: String) -> [Program]? {
         guard let db = DB else {
             connectionError()

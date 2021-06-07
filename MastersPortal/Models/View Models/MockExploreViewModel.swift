@@ -42,7 +42,7 @@ class FeaturedViewModel: NSObject {
                 title: "Cyber Security",
                 subtitle: "Koç University",
                 thumbnail: Asset.DemoImages.kuCyber.image
-            ),
+            )
         ]
 
     private var featuredViewModel: FeaturedSectionViewModel {

@@ -5,9 +5,9 @@
 ////  Created by HASAN CAN on 15/5/21.
 ////
 //
-//import IGListKit
+// import IGListKit
 //
-//class ProgramDetailViewController: UIViewController {
+// class ProgramDetailViewController: UIViewController {
 //    let padding: CGFloat = 20
 //    private var headerView: StretchyHeaderView?
 //    let viewModel: SectionsDataSource
@@ -66,9 +66,9 @@
 //            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 //        ])
 //    }
-//}
+// }
 //
-//extension ProgramDetailViewController: UICollectionViewDataSource {
+// extension ProgramDetailViewController: UICollectionViewDataSource {
 //    func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
 //        30
 //    }
@@ -91,9 +91,9 @@
 //        cell.backgroundColor = .black
 //        return cell
 //    }
-//}
+// }
 //
-//extension ProgramDetailViewController: UICollectionViewDelegateFlowLayout {
+// extension ProgramDetailViewController: UICollectionViewDelegateFlowLayout {
 //    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
 //        CGSize(width: view.frame.width - 2 * padding, height: 44)
 //    }
@@ -101,11 +101,11 @@
 //    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, referenceSizeForHeaderInSection _: Int) -> CGSize {
 //        CGSize(width: view.frame.width, height: 340)
 //    }
-//}
+// }
 //
-//// MARK: - UIScrollViewDelegate
+// MARK: - UIScrollViewDelegate
 //
-//extension ProgramDetailViewController: UIScrollViewDelegate {
+// extension ProgramDetailViewController: UIScrollViewDelegate {
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //        let contentOffsetY = scrollView.contentOffset.y
 //        if contentOffsetY < -padding {
@@ -114,4 +114,4 @@
 //            headerView?.animator.fractionComplete = 0.0
 //        }
 //    }
-//}
+// }

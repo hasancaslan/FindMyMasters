@@ -78,6 +78,12 @@
 		F3D00AA7266E5078007D7C42 /* SearchFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D00AA6266E5078007D7C42 /* SearchFooter.swift */; };
 		F3D00AA9266E6229007D7C42 /* ProgramPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D00AA8266E6229007D7C42 /* ProgramPageViewController.swift */; };
 		F3D00AAC266E8523007D7C42 /* mastersportal.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = F3D00AAB266E8522007D7C42 /* mastersportal.sqlite3 */; };
+		F3D00AAF266E9A5A007D7C42 /* CheapProgramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D00AAE266E9A5A007D7C42 /* CheapProgramCell.swift */; };
+		F3D00AB1266E9A66007D7C42 /* CheapProgramCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D00AB0266E9A66007D7C42 /* CheapProgramCell.xib */; };
+		F3D00AB3266E9EB0007D7C42 /* CheapProgramDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D00AB2266E9EB0007D7C42 /* CheapProgramDataContainer.swift */; };
+		F3D00AB5266EA04E007D7C42 /* CheapProgramSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D00AB4266EA04E007D7C42 /* CheapProgramSearchViewController.swift */; };
+		F3D00AB7266EC459007D7C42 /* MultiProgramSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D00AB6266EC459007D7C42 /* MultiProgramSearchViewController.swift */; };
+		F3D00AB9266EC4B7007D7C42 /* MutiProgramDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D00AB8266EC4B7007D7C42 /* MutiProgramDataContainer.swift */; };
 		F3FB53AE266D355E00961877 /* ProgramDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3FB53AD266D355E00961877 /* ProgramDetail.storyboard */; };
 		F3FB53B0266D450400961877 /* ProgramDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB53AF266D450400961877 /* ProgramDetailViewController.swift */; };
 		F3FB53B2266D720300961877 /* ProgramDetailDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB53B1266D720300961877 /* ProgramDetailDataContainer.swift */; };
@@ -162,6 +168,12 @@
 		F3D00AA6266E5078007D7C42 /* SearchFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFooter.swift; sourceTree = "<group>"; };
 		F3D00AA8266E6229007D7C42 /* ProgramPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramPageViewController.swift; sourceTree = "<group>"; };
 		F3D00AAB266E8522007D7C42 /* mastersportal.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mastersportal.sqlite3; sourceTree = "<group>"; };
+		F3D00AAE266E9A5A007D7C42 /* CheapProgramCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapProgramCell.swift; sourceTree = "<group>"; };
+		F3D00AB0266E9A66007D7C42 /* CheapProgramCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheapProgramCell.xib; sourceTree = "<group>"; };
+		F3D00AB2266E9EB0007D7C42 /* CheapProgramDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapProgramDataContainer.swift; sourceTree = "<group>"; };
+		F3D00AB4266EA04E007D7C42 /* CheapProgramSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapProgramSearchViewController.swift; sourceTree = "<group>"; };
+		F3D00AB6266EC459007D7C42 /* MultiProgramSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiProgramSearchViewController.swift; sourceTree = "<group>"; };
+		F3D00AB8266EC4B7007D7C42 /* MutiProgramDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutiProgramDataContainer.swift; sourceTree = "<group>"; };
 		F3FB53AD266D355E00961877 /* ProgramDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProgramDetail.storyboard; sourceTree = "<group>"; };
 		F3FB53AF266D450400961877 /* ProgramDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailViewController.swift; sourceTree = "<group>"; };
 		F3FB53B1266D720300961877 /* ProgramDetailDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailDataContainer.swift; sourceTree = "<group>"; };
@@ -266,7 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				F3D00AAA266E7751007D7C42 /* Explore */,
-				F36C543D2647637F001C4526 /* DecideViewController.swift */,
+				F3D00AAD266E9804007D7C42 /* Decide */,
 				F33B5881265D992500832F88 /* ApplyViewController.swift */,
 			);
 			name = ViewControllers;
@@ -276,12 +288,12 @@
 			isa = PBXGroup;
 			children = (
 				F3D00AA6266E5078007D7C42 /* SearchFooter.swift */,
-				F348CF30266053AD00440106 /* CollectionCells */,
+				F348CF30266053AD00440106 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F348CF30266053AD00440106 /* CollectionCells */ = {
+		F348CF30266053AD00440106 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				F36C545926488FDE001C4526 /* SectionTitleCell.swift */,
@@ -294,8 +306,10 @@
 				F36C546226489236001C4526 /* SmallCell.xib */,
 				F39E680026508B11002756CC /* ProgramDetailTitleCell.swift */,
 				F39E67FE26508AF8002756CC /* ProgramDetailTitleCell.xib */,
+				F3D00AAE266E9A5A007D7C42 /* CheapProgramCell.swift */,
+				F3D00AB0266E9A66007D7C42 /* CheapProgramCell.xib */,
 			);
-			path = CollectionCells;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		F348CF312660543D00440106 /* Services */ = {
@@ -358,13 +372,6 @@
 			path = "Section Title";
 			sourceTree = "<group>";
 		};
-		F36AE6302667D0DF0018E7DE /* Workers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Workers;
-			sourceTree = "<group>";
-		};
 		F36AE6372667D3CE0018E7DE /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,7 +407,6 @@
 				F36C54212647410B001C4526 /* Storyboards */,
 				F348CF2C2660531E00440106 /* Protocols */,
 				F36C541F264740E6001C4526 /* Models */,
-				F36AE6302667D0DF0018E7DE /* Workers */,
 				F348CF312660543D00440106 /* Services */,
 				F36C541E264740DF001C4526 /* Resources */,
 				F348CF322660548500440106 /* Extensions */,
@@ -434,6 +440,8 @@
 				F3115C782666EB200057569D /* Student.swift */,
 				F31FE5E42651F179005DCD14 /* SimpleListAdapterDataSource.swift */,
 				F3FB53B1266D720300961877 /* ProgramDetailDataContainer.swift */,
+				F3D00AB2266E9EB0007D7C42 /* CheapProgramDataContainer.swift */,
+				F3D00AB8266EC4B7007D7C42 /* MutiProgramDataContainer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -491,6 +499,16 @@
 				F3FB53B9266E29BB00961877 /* CityListViewController.swift */,
 			);
 			name = Explore;
+			sourceTree = "<group>";
+		};
+		F3D00AAD266E9804007D7C42 /* Decide */ = {
+			isa = PBXGroup;
+			children = (
+				F36C543D2647637F001C4526 /* DecideViewController.swift */,
+				F3D00AB4266EA04E007D7C42 /* CheapProgramSearchViewController.swift */,
+				F3D00AB6266EC459007D7C42 /* MultiProgramSearchViewController.swift */,
+			);
+			name = Decide;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -573,6 +591,7 @@
 				F3FB53B6266D7B9C00961877 /* City.storyboard in Resources */,
 				F3FB53AE266D355E00961877 /* ProgramDetail.storyboard in Resources */,
 				F36C541226473B12001C4526 /* Main.storyboard in Resources */,
+				F3D00AB1266E9A66007D7C42 /* CheapProgramCell.xib in Resources */,
 				F33B5884265D993700832F88 /* Apply.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,6 +657,7 @@
 				F3115C732666EB040057569D /* City.swift in Sources */,
 				F3115C812667CDE10057569D /* Constants.swift in Sources */,
 				F3115C7B2667CD4B0057569D /* DatabaseService.swift in Sources */,
+				F3D00AB5266EA04E007D7C42 /* CheapProgramSearchViewController.swift in Sources */,
 				F3FB53B8266D7C9800961877 /* CityDetailViewController.swift in Sources */,
 				F36C5469264896C0001C4526 /* ListCell.swift in Sources */,
 				F35FEF7B264B4E260003B042 /* TitleSectionController.swift in Sources */,
@@ -647,6 +667,7 @@
 				F36C546626489265001C4526 /* DiciplineItemViewModel.swift in Sources */,
 				F36C545E26489011001C4526 /* SectionTitleViewModel.swift in Sources */,
 				F35FEF77264B38E30003B042 /* NSObject+ListDiffable.swift in Sources */,
+				F3D00AAF266E9A5A007D7C42 /* CheapProgramCell.swift in Sources */,
 				F3D00AA3266E4555007D7C42 /* ExplorePageViewController.swift in Sources */,
 				F35FEF81264C2D650003B042 /* FeaturedViewModel.swift in Sources */,
 				F35FEF7D264B4E5C0003B042 /* DiciplinesSectionController.swift in Sources */,
@@ -659,6 +680,7 @@
 				F3D00AA5266E48E7007D7C42 /* CountriesViewModel.swift in Sources */,
 				F3115C792666EB200057569D /* Student.swift in Sources */,
 				F36C542E264755D5001C4526 /* XCAssets+Generated.swift in Sources */,
+				F3D00AB3266E9EB0007D7C42 /* CheapProgramDataContainer.swift in Sources */,
 				F31E83C826517079001AE0FF /* CountriesSection.swift in Sources */,
 				F35C539C2652F8A8007FB3EA /* SectionViewModel.swift in Sources */,
 				F35C539F2652FDAA007FB3EA /* StretchyCollectionViewFlowLayout.swift in Sources */,
@@ -669,6 +691,7 @@
 				F3115C712666EAE20057569D /* Place.swift in Sources */,
 				F33B5882265D992500832F88 /* ApplyViewController.swift in Sources */,
 				F36AE6342667D12A0018E7DE /* DataService.swift in Sources */,
+				F3D00AB9266EC4B7007D7C42 /* MutiProgramDataContainer.swift in Sources */,
 				F36C540B26473B12001C4526 /* AppDelegate.swift in Sources */,
 				F36C542426475594001C4526 /* BartyCrouch.swift in Sources */,
 				F36C5444264773FC001C4526 /* +UINavigationController.swift in Sources */,
@@ -680,6 +703,7 @@
 				F36C5430264755D5001C4526 /* Strings+Generated.swift in Sources */,
 				F39E67F9264FF6B9002756CC /* ProgramDetailViewController-dep.swift in Sources */,
 				F36C540D26473B12001C4526 /* SceneDelegate.swift in Sources */,
+				F3D00AB7266EC459007D7C42 /* MultiProgramSearchViewController.swift in Sources */,
 				F3D00AA9266E6229007D7C42 /* ProgramPageViewController.swift in Sources */,
 				F36C542F264755D5001C4526 /* IB-Scenes+Generated.swift in Sources */,
 				F36C545B26488FDE001C4526 /* SectionTitleCell.swift in Sources */,

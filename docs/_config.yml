@@ -35,16 +35,16 @@ youtube_username                          :
 # Feature List                            Edit, add or remove features to be presented.
 features                                  :
 
-  - title                                 : Awesome Feature 1
-    description                           : Feature Description
+  - title                                 : Explore
+    description                           :
     fontawesome_icon_name                 : magic
     
-  - title                                 : Awesome Feature 2
-    description                           : Feature Description
-    fontawesome_icon_name                 : mobile
+  - title                                 : Decide
+    description                           :
+    fontawesome_icon_name                 : lightbulb
 
-  - title                                 : Awesome Feature 3
-    description                           : Feature Description
+  - title                                 : Apply
+    description                           :
     fontawesome_icon_name                 : play-circle
  
   - title                                 : # New Feature Title

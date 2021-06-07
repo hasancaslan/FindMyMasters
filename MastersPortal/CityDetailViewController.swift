@@ -23,7 +23,7 @@ class CityDetailViewController: UIViewController {
                 city.propertyPricetoIncome,
                 city.trafficCommuteTimeIndex,
                 city.pollutionIndex,
-                city.climateIndex,
+                city.climateIndex
             ]
         }
     }
@@ -38,7 +38,7 @@ class CityDetailViewController: UIViewController {
         .propertyPricetoIncome,
         .trafficCommuteTimeIndex,
         .pollutionIndex,
-        .climateIndex,
+        .climateIndex
     ]
 
     override func viewDidLoad() {
@@ -70,7 +70,7 @@ extension CityDetailViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: "CityDetailCell", for: indexPath) 
+       let cell = tableView.dequeueReusableCell(withIdentifier: "CityDetailCell", for: indexPath)
         let data = tableViewModel[indexPath.section]
         cell.textLabel?.text = String(data)
         return cell

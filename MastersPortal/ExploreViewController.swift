@@ -20,7 +20,7 @@ class ExploreViewController: UIViewController {
         let viewControllers = [
             ExplorePageViewController(title: "Featured", dataSource: featuredViewModel),
             ExplorePageViewController(title: "Countries", dataSource: countriesViewModel),
-            ProgramPageViewController(title: "Programs", dataSource: programsViewModel),
+            UINavigationController(rootViewController: ProgramPageViewController(title: "Programs", dataSource: programsViewModel))
         ]
 
         let pagingViewController = PagingViewController(viewControllers: viewControllers)

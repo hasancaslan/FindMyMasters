@@ -5,7 +5,7 @@ final class ListCell: UICollectionViewCell, ConfigurableCell, ListBindable {
     @IBOutlet private var iconView: UIView!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

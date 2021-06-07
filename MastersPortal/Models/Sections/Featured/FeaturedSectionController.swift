@@ -11,7 +11,7 @@ import UIKit
 class FeaturedSectionController: ListBindingSectionController<FeaturedItemViewModel> {
     typealias ViewModelType = SectionViewModel<FeaturedItemViewModel>
     typealias CellType = FeaturedCell
-    
+
     var viewModel: ViewModelType?
 
     override init() {

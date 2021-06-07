@@ -84,8 +84,7 @@ class ProgramDetailViewController: UIViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         guard let date = dateFormatter.date(from: timestamp) else { return nil }
-        
-        
+
         dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_GB")
         dateFormatter.setLocalizedDateFormatFromTemplate("dMMMyyyy")

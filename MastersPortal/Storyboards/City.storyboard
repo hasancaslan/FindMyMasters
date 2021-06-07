@@ -64,7 +64,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9y-Dr-TFF">
-                                <rect key="frame" x="20" y="71" width="37.5" height="17"/>
+                                <rect key="frame" x="20" y="67" width="37.5" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vCA-gz-r7X" secondAttribute="trailing" constant="20" id="EJv-dD-iwv"/>
                             <constraint firstItem="vCA-gz-r7X" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="Mht-4g-owT"/>
                             <constraint firstItem="h9y-Dr-TFF" firstAttribute="leading" secondItem="vCA-gz-r7X" secondAttribute="leading" id="UCM-Te-EOF"/>
-                            <constraint firstItem="vCA-gz-r7X" firstAttribute="top" secondItem="h9y-Dr-TFF" secondAttribute="bottom" id="Z9Q-dU-F4Z"/>
+                            <constraint firstItem="vCA-gz-r7X" firstAttribute="top" secondItem="h9y-Dr-TFF" secondAttribute="bottom" constant="4" id="Z9Q-dU-F4Z"/>
                             <constraint firstItem="qy8-tU-tCZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fJI-4g-ajJ"/>
                             <constraint firstItem="4jH-zg-21t" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="27" id="oWF-aY-DqG"/>
                             <constraint firstItem="vCA-gz-r7X" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="tud-f2-T7v"/>

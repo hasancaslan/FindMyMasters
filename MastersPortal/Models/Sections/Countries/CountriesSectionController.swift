@@ -11,7 +11,7 @@ import UIKit
 class CountriesSectionController: ListBindingSectionController<CountryItemViewModel> {
     typealias ViewModelType = CountriesSectionViewModel
     typealias CellType = ListCell
-    
+
     var viewModel: ViewModelType?
 
     override init() {

@@ -8,57 +8,86 @@
 import Parchment
 import UIKit
 
+struct DecideCellDataContainer {
+    var title: String
+    var subtitle: String
+    var icon: UIImage
+}
+
 class DecideViewController: UIViewController {
+    @IBOutlet var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.configureNavigationBar()
         navigationItem.title = L10n.Decide.Navigation.title
+    }
 
-        let viewControllers = [
-            ContentViewController(index: 0),
-            ContentViewController(index: 1),
-            ContentViewController(index: 2),
-            ContentViewController(index: 3),
-        ]
+    var tableViewModel: [DecideCellDataContainer] = {
+        let largeConfig = UIImage.SymbolConfiguration(textStyle: .largeTitle)
 
-        let pagingViewController = PagingViewController(viewControllers: viewControllers)
+        return [DecideCellDataContainer(title: "Cheapest in Country",
+                                        subtitle: "3 cheapest programs in the given field of each country, if any.",
+                                        icon: UIImage(systemName: "dollarsign.circle.fill", withConfiguration: largeConfig)!),
+                DecideCellDataContainer(title: "Keywords in Program",
+                                                subtitle: "For those who are not sure, the cheapest schools for given keywords.",
+                                                icon: UIImage(systemName: "person.fill.questionmark", withConfiguration: largeConfig)!),
+                DecideCellDataContainer(title: "Cheapest in Country",
+                                                subtitle: "3 cheapest programs in the given field of each country, if any.",
+                                                icon: UIImage(systemName: "dollarsign.circle.fill", withConfiguration: largeConfig)!),
+                DecideCellDataContainer(title: "Cheapest in Country",
+                                                subtitle: "3 cheapest programs in the given field of each country, if any.",
+                                                icon: UIImage(systemName: "dollarsign.circle.fill", withConfiguration: largeConfig)!),
+                DecideCellDataContainer(title: "Cheapest in Country",
+                                                subtitle: "3 cheapest programs in the given field of each country, if any.",
+                                                icon: UIImage(systemName: "dollarsign.circle.fill", withConfiguration: largeConfig)!)]
+    }()
+}
 
-        // Make sure you add the PagingViewController as a child view
-        // controller and constrain it to the edges of the view.
-        addChild(pagingViewController)
-        view.addSubview(pagingViewController.view)
-        view.constrainToEdges(pagingViewController.view)
-        pagingViewController.didMove(toParent: self)
+extension DecideViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        tableViewModel.count
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DecideCell", for: indexPath)
+        let data = tableViewModel[indexPath.section]
+
+        cell.textLabel?.text = data.title
+        cell.detailTextLabel?.text = data.subtitle
+        cell.imageView?.image = data.icon
+
+        if indexPath.section % 2 == 0 {
+            cell.textLabel?.textColor = .white
+            cell.detailTextLabel?.textColor = .white
+            cell.imageView?.tintColor = .white
+            cell.backgroundColor = Asset.Colors.primaryColor.color
+        } else {
+            cell.textLabel?.textColor = .black
+            cell.detailTextLabel?.textColor = .black
+            cell.imageView?.tintColor = Asset.Colors.primaryColor.color
+            cell.backgroundColor = .white
+        }
+
+        return cell
     }
 }
 
-final class ContentViewController: UIViewController {
-    convenience init(index: Int) {
-        self.init(title: "View \(index)", content: "\(index)")
-    }
+extension DecideViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
 
-    convenience init(title: String) {
-        self.init(title: title, content: title)
-    }
+        switch indexPath.section {
+        case 0:
+            let cheapViewController = CheapProgramSearchViewController()
+            navigationController?.pushViewController(cheapViewController, animated: true)
 
-    init(title: String, content: String) {
-        super.init(nibName: nil, bundle: nil)
-        self.title = title
-
-        let label = UILabel(frame: .zero)
-        label.font = UIFont.systemFont(ofSize: 50, weight: UIFont.Weight.thin)
-        label.textColor = UIColor(red: 95 / 255, green: 102 / 255, blue: 108 / 255, alpha: 1)
-        label.textAlignment = .center
-        label.text = content
-        label.sizeToFit()
-
-        view.addSubview(label)
-        view.constrainToEdges(label)
-        view.backgroundColor = .white
-    }
-
-    @available(*, unavailable)
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        default:
+            break
+        }
     }
 }

@@ -71,4 +71,3 @@ extension City: ListDiffable {
         return name == object.name && country == object.country
     }
 }
-

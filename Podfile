@@ -10,8 +10,8 @@ target 'MastersPortal' do
   #pod 'SnapKit'
 
   # activity indicator
-  pod 'JGProgressHUD'
-  pod 'PKHUD'
+  #pod 'JGProgressHUD'
+  #pod 'PKHUD'
 
   # custom UI
   pod 'Eureka'
@@ -20,7 +20,7 @@ target 'MastersPortal' do
 
   # animations
   #pod 'ViewAnimator'
-  pod 'SkeletonView'
+  #pod 'SkeletonView'
 
   # Data
   pod 'SQLite.swift'

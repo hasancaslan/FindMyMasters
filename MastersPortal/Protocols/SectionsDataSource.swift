@@ -11,5 +11,3 @@ protocol SectionsDataSource: ListAdapterDataSource {
     var sections: [CollectionSection] { get set }
     func layout(at index: Int) -> NSCollectionLayoutSection?
 }
-
-

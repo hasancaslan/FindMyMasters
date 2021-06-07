@@ -26,8 +26,8 @@ class Program: Codable {
     }
 
     enum CodingKeys: String, CodingKey, CaseIterable {
-        case university = "university_name"
         case name = "program_name"
+        case university = "university_name"
         case duration
         case language
     }

@@ -5,10 +5,10 @@
 ////  Created by HASAN CAN on 2/6/21.
 ////
 //
-//import Foundation
-//import SQLite
+// import Foundation
+// import SQLite
 //
-//class DataService<T: Codable>: DataServiceProtocol where T: PrimaryKeyFilter, T.FilterDataType == T {
+// class DataService<T: Codable>: DataServiceProtocol where T: PrimaryKeyFilter, T.FilterDataType == T {
 //    let table: Table
 //
 //    init(tableName: String) {
@@ -93,4 +93,4 @@
 //
 //        return loadedRows
 //    }
-//}
+// }

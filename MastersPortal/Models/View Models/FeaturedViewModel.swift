@@ -42,7 +42,7 @@ class FeaturedViewModel: NSObject {
                 title: "Cyber Security",
                 subtitle: "Koç University",
                 thumbnail: Asset.DemoImages.kuCyber.image
-            ),
+            )
         ]
 
     private let featuredTitle = SectionTitleViewModel(title: "Featured")
@@ -56,7 +56,7 @@ class FeaturedViewModel: NSObject {
     var sections: [CollectionSection] {
         [
             FeaturedSection(featuredViewModel),
-            FeaturedSection(featuredViewModel),
+            FeaturedSection(featuredViewModel)
         ]
     }
 }

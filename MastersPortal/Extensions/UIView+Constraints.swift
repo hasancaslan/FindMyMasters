@@ -55,7 +55,7 @@ extension UIView {
             horizontalContraint,
             verticalContraint,
             heightContraint,
-            widthContraint,
+            widthContraint
         ])
     }
 
@@ -106,7 +106,7 @@ extension UIView {
             topContraint,
             bottomConstraint,
             leadingContraint,
-            trailingContraint,
+            trailingContraint
         ])
     }
 }

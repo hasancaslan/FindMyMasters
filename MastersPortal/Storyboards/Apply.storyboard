@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,7 +31,8 @@
         <scene sceneID="3yz-0h-f2h">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L48-Xb-T4Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Apply" image="pencil.circle" catalog="system" id="c1a-ej-pwD" customClass="AnimatedTabBarItem" customModule="AnimatedTabBar">
+                    <tabBarItem key="tabBarItem" title="Apply" id="c1a-ej-pwD" customClass="AnimatedTabBarItem" customModule="AnimatedTabBar">
+                        <imageReference key="image" image="pencil.circle" catalog="system" renderingMode="template"/>
                         <connections>
                             <outlet property="animation" destination="Wjg-03-Veq" id="sVB-2v-r03"/>
                         </connections>
