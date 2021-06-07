@@ -51,7 +51,7 @@ extension CityListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let cities = cities, !cities.isEmpty
         else {
-            tableView.setEmptyView(#imageLiteral(resourceName: "simulator_screenshot_3231934A-C4C7-4E55-98D8-BFE5976B1E8D.png")
+            tableView.setEmptyView(
                 title: "Cities not found.",
                 message: "There is no city has a Master's Program in \(countryName ?? "country").")
             return 0
