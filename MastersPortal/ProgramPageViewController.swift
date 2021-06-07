@@ -45,6 +45,7 @@ class ProgramPageViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.dataSource = dataSource
         self.title = title
+        navigationItem.title = title
     }
 
     @available(*, unavailable)
@@ -55,7 +56,7 @@ class ProgramPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.configureNavigationBar()
-        navigationItem.title = L10n.Explore.Navigation.title
+        
 
         addTableView()
     }

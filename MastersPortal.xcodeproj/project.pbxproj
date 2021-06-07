@@ -203,6 +203,7 @@
 		F3115C7C2667CDB20057569D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F39E67F8264FF6B9002756CC /* ProgramDetailViewController-dep.swift */,
 				F36C540A26473B12001C4526 /* AppDelegate.swift */,
 				F36C540C26473B12001C4526 /* SceneDelegate.swift */,
 				F36AE6372667D3CE0018E7DE /* Errors */,
@@ -266,7 +267,6 @@
 			children = (
 				F3D00AAA266E7751007D7C42 /* Explore */,
 				F36C543D2647637F001C4526 /* DecideViewController.swift */,
-				F3D00AA8266E6229007D7C42 /* ProgramPageViewController.swift */,
 				F33B5881265D992500832F88 /* ApplyViewController.swift */,
 			);
 			name = ViewControllers;
@@ -485,8 +485,8 @@
 			children = (
 				F36C543F264763A9001C4526 /* ExploreViewController.swift */,
 				F3D00AA2266E4555007D7C42 /* ExplorePageViewController.swift */,
-				F39E67F8264FF6B9002756CC /* ProgramDetailViewController-dep.swift */,
 				F3FB53AF266D450400961877 /* ProgramDetailViewController.swift */,
+				F3D00AA8266E6229007D7C42 /* ProgramPageViewController.swift */,
 				F3FB53B7266D7C9800961877 /* CityDetailViewController.swift */,
 				F3FB53B9266E29BB00961877 /* CityListViewController.swift */,
 			);

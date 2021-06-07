@@ -26,8 +26,11 @@ class CityListViewController: UIViewController {
 
     func loadCities(in country: String) {
         cities = DatabaseService.shared.getAllCitiesInCountry(country: country)
-
         tableView.reloadData()
+    }
+
+    func loadPrograms(in city: City) -> [Program]? {
+        return DatabaseService.shared.getAllProgramsInCity(name: city.name, country: city.country)
     }
 }
 
@@ -35,20 +38,27 @@ extension CityListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let city = cities?[indexPath.row] else { return }
-        let cityDetailVC = StoryboardScene.City.cityDetailViewController.instantiate()
-        cityDetailVC.city = city
+
+        let programs = loadPrograms(in: city)
+
+        let programsViewController = ProgramPageViewController(title: "Programs in \(city.name)", dataSource: programs)
+
+        navigationController?.pushViewController(programsViewController, animated: true)
     }
 }
 
 extension CityListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if cities == nil {
-            tableView.setEmptyView(title: "Cities not found.", message: "There is no city has a Master's Program in \(countryName ?? "country").")
+        guard let cities = cities, !cities.isEmpty
+        else {
+            tableView.setEmptyView(#imageLiteral(resourceName: "simulator_screenshot_3231934A-C4C7-4E55-98D8-BFE5976B1E8D.png")
+                title: "Cities not found.",
+                message: "There is no city has a Master's Program in \(countryName ?? "country").")
             return 0
-        } else {
-            tableView.restore()
-            return cities!.count
         }
+
+        tableView.restore()
+        return cities.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
