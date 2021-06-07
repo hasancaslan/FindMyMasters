@@ -54,7 +54,7 @@ class City: Codable {
         case safetyIndex = "Safety_Index"
         case healthCareIndex = "Health_Care_Index"
         case costOfLivingIndex = "Cost_of_Living_Index"
-        case propertyPricetoIncome = "Property_Price_to_Income"
+        case propertyPricetoIncome = "Property_Price_to_Income_Ratio"
         case trafficCommuteTimeIndex = "Traffic_Commute_Time_Index"
         case pollutionIndex = "Pollution_Index"
         case climateIndex = "Climate_Index"
