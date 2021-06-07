@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,13 +18,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="342" height="324"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWg-ge-v1Z" userLabel="Separator">
-                        <rect key="frame" x="4" y="0.0" width="334" height="0.66666666666666663"/>
-                        <color key="backgroundColor" systemColor="separatorColor"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="0.5" id="u3Y-7e-MSB"/>
-                        </constraints>
-                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAPTION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpK-UW-cvP">
                         <rect key="frame" x="4" y="20" width="334" height="14.333333333333336"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -63,11 +55,8 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="XtA-Ws-nyd" secondAttribute="bottom" id="0ey-Ku-yF1"/>
                     <constraint firstAttribute="trailing" secondItem="VpK-UW-cvP" secondAttribute="trailing" constant="4" id="18V-b7-NVN"/>
-                    <constraint firstItem="UWg-ge-v1Z" firstAttribute="trailing" secondItem="XtA-Ws-nyd" secondAttribute="trailing" id="4DB-xs-aw5"/>
                     <constraint firstItem="yVJ-Kh-wpV" firstAttribute="leading" secondItem="7ru-U8-rLZ" secondAttribute="leading" constant="4" id="5oQ-dC-pMN"/>
                     <constraint firstAttribute="trailing" secondItem="XtA-Ws-nyd" secondAttribute="trailing" constant="4" id="9qh-1n-VBe"/>
-                    <constraint firstItem="UWg-ge-v1Z" firstAttribute="leading" secondItem="XtA-Ws-nyd" secondAttribute="leading" id="ClC-TO-OZM"/>
-                    <constraint firstItem="UWg-ge-v1Z" firstAttribute="top" secondItem="7ru-U8-rLZ" secondAttribute="top" id="GgR-6I-dIk"/>
                     <constraint firstItem="wtj-oY-6pH" firstAttribute="top" secondItem="yVJ-Kh-wpV" secondAttribute="bottom" constant="4" id="Nna-wY-NcC"/>
                     <constraint firstItem="yVJ-Kh-wpV" firstAttribute="top" secondItem="VpK-UW-cvP" secondAttribute="bottom" constant="8" id="OcD-jC-Mlf"/>
                     <constraint firstAttribute="trailing" secondItem="wtj-oY-6pH" secondAttribute="trailing" constant="4" id="Zcc-hI-rUv"/>
@@ -94,8 +83,5 @@
         <namedColor name="PrimaryColor">
             <color red="0.74099999666213989" green="0.125" blue="0.18400000035762787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

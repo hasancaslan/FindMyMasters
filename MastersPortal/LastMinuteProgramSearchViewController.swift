@@ -1,5 +1,5 @@
 //
-//  MultiProgramSearchViewController.swift
+//  LastMinuteProgramSearchViewController.swift
 //  MastersPortal
 //
 //  Created by HASAN CAN on 8/6/21.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-class MultiProgramSearchViewController: UIViewController {
-    typealias DataType = CheapProgramDataContainer
+class LastMinuteProgramSearchViewController: UIViewController {
+    typealias DataType = ProgramDetailDataContainer
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .systemBackground
 
-        tableView.register(UINib(nibName: CheapProgramCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: CheapProgramCell.reuseIdentifier)
+        tableView.register(UINib(nibName: ProgramDetailListCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: ProgramDetailListCell.reuseIdentifier)
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -31,7 +31,7 @@ class MultiProgramSearchViewController: UIViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
-        let title = "Multiple Keywords"
+        let title = "Quick & Last Minute"
         self.title = title
         navigationItem.title = title
     }
@@ -69,33 +69,23 @@ class MultiProgramSearchViewController: UIViewController {
     private func configureSearchController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Field"
+        searchController.searchBar.placeholder = "IELTS Score"
         searchController.searchBar.tintColor = .white
         navigationItem.searchController = searchController
         definesPresentationContext = true
         searchController.searchBar.delegate = self
+        searchController.searchBar.scopeButtonTitles = ["12 months", "24 months"]
     }
 
-    func filterContentForSearchText(_ searchText: String) {
-        guard searchText.count > 1 else { return }
-
-        let splitted = searchText.split(separator: " ")
-        let keyword1 = String(splitted[0])
-        let keyword2: String
-
-        if splitted.count > 1 {
-            keyword2 = String(splitted[1])
-        } else {
-            keyword2 = ""
-        }
-
-        filteredData = DatabaseService.shared.getProgramsWithMultiKeyword(keyword1: keyword1, keyword2: keyword2)
+    func filterContentForSearchText(_ searchText: String, duration: String) {
+     
+        filteredData = DatabaseService.shared.getProgramsWithDurationAndIELTSScore(score: Double(searchText) ?? 6.0, duration: duration)
         tableView.reloadData()
     }
 }
 
-extension MultiProgramSearchViewController: UITableViewDataSource {
-    func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension LastMinuteProgramSearchViewController: UITableViewDataSource {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         guard let filtered = filteredData, !filtered.isEmpty
         else {
             tableView.setEmptyView(
@@ -107,10 +97,15 @@ extension MultiProgramSearchViewController: UITableViewDataSource {
         tableView.restore()
         return filtered.count
     }
+    
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        182.0
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CheapProgramCell.reuseIdentifier, for: indexPath) as? CheapProgramCell,
-              let filtered = filteredData
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ProgramDetailListCell.reuseIdentifier, for: indexPath) as? ProgramDetailListCell,
+            let filtered = filteredData
         else { fatalError() }
 
         let data = filtered[indexPath.row]
@@ -119,16 +114,18 @@ extension MultiProgramSearchViewController: UITableViewDataSource {
     }
 }
 
-extension MultiProgramSearchViewController: UITableViewDelegate {
+extension LastMinuteProgramSearchViewController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
         guard let filtered = filteredData else { return }
 
         let data = filtered[indexPath.row]
-        guard let detail = DatabaseService.shared.getProgramDetails(
-            name: data.programName,
-            university: data.universityName)
+        guard
+            let detail = DatabaseService.shared.getProgramDetails(
+                name: data.programName,
+                university: data.universityName)
         else { return }
 
         let detailViewController = StoryboardScene.ProgramDetail.programDetailViewController.instantiate()
@@ -137,11 +134,17 @@ extension MultiProgramSearchViewController: UITableViewDelegate {
     }
 }
 
-extension MultiProgramSearchViewController: UISearchResultsUpdating {
+extension LastMinuteProgramSearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
-        filterContentForSearchText(searchBar.text!)
+        let duration = searchController.searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchBar.text!, duration: duration.lowercased())
     }
 }
 
-extension MultiProgramSearchViewController: UISearchBarDelegate {}
+extension LastMinuteProgramSearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        let duration = searchController.searchBar.scopeButtonTitles![selectedScope]
+        filterContentForSearchText(searchBar.text!, duration: duration.lowercased())
+    }
+}

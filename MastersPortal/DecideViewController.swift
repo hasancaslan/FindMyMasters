@@ -26,21 +26,28 @@ class DecideViewController: UIViewController {
     var tableViewModel: [DecideCellDataContainer] = {
         let largeConfig = UIImage.SymbolConfiguration(textStyle: .largeTitle)
 
-        return [DecideCellDataContainer(title: "Cheapest in Country",
-                                        subtitle: "3 cheapest programs in the given field of each country, if any.",
-                                        icon: UIImage(systemName: "dollarsign.circle.fill", withConfiguration: largeConfig)!),
-                DecideCellDataContainer(title: "Keywords in Program",
-                                                subtitle: "For those who are not sure, the cheapest schools for given keywords.",
-                                                icon: UIImage(systemName: "person.fill.questionmark", withConfiguration: largeConfig)!),
-                DecideCellDataContainer(title: "Cheapest in Country",
-                                                subtitle: "3 cheapest programs in the given field of each country, if any.",
-                                                icon: UIImage(systemName: "dollarsign.circle.fill", withConfiguration: largeConfig)!),
-                DecideCellDataContainer(title: "Cheapest in Country",
-                                                subtitle: "3 cheapest programs in the given field of each country, if any.",
-                                                icon: UIImage(systemName: "dollarsign.circle.fill", withConfiguration: largeConfig)!),
-                DecideCellDataContainer(title: "Cheapest in Country",
-                                                subtitle: "3 cheapest programs in the given field of each country, if any.",
-                                                icon: UIImage(systemName: "dollarsign.circle.fill", withConfiguration: largeConfig)!)]
+        return [
+            DecideCellDataContainer(
+                title: "Cheapest in Country",
+                subtitle: "3 cheapest programs in the given field of each country, if any.",
+                icon: UIImage(systemName: "dollarsign.circle.fill", withConfiguration: largeConfig)!),
+            DecideCellDataContainer(
+                title: "Multiple Keywords",
+                subtitle: "For those who are not sure, the cheapest schools for given keywords.",
+                icon: UIImage(systemName: "person.fill.questionmark", withConfiguration: largeConfig)!),
+            DecideCellDataContainer(
+                title: "Quick & Last Minute",
+                subtitle: "still not expired and short programs.",
+                icon: UIImage(systemName: "hare.fill", withConfiguration: largeConfig)!),
+//            DecideCellDataContainer(
+//                title: "Cheapest in Country",
+//                subtitle: "3 cheapest programs in the given field of each country, if any.",
+//                icon: UIImage(systemName: "dollarsign.circle.fill", withConfiguration: largeConfig)!),
+//            DecideCellDataContainer(
+//                title: "Cheapest in Country",
+//                subtitle: "3 cheapest programs in the given field of each country, if any.",
+//                icon: UIImage(systemName: "dollarsign.circle.fill", withConfiguration: largeConfig)!),
+        ]
     }()
 }
 
@@ -85,6 +92,14 @@ extension DecideViewController: UITableViewDelegate {
         case 0:
             let cheapViewController = CheapProgramSearchViewController()
             navigationController?.pushViewController(cheapViewController, animated: true)
+
+        case 1:
+            let multiViewController = MultiProgramSearchViewController()
+            navigationController?.pushViewController(multiViewController, animated: true)
+
+        case 2:
+            let lastViewController = LastMinuteProgramSearchViewController()
+            navigationController?.pushViewController(lastViewController, animated: true)
 
         default:
             break

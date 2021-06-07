@@ -78,19 +78,6 @@ class ProgramDetailViewController: UIViewController {
         present(cityDetailVC, animated: true)
     }
 
-    private func formatTimestamp(_ timestamp: String) -> String? {
-        var dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-        guard let date = dateFormatter.date(from: timestamp) else { return nil }
-
-        dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_GB")
-        dateFormatter.setLocalizedDateFormatFromTemplate("dMMMyyyy")
-        return dateFormatter.string(from: date)
-    }
-
     @IBAction func applyToProgram(_ sender: Any) {}
 
     @IBAction func close(_ sender: Any) {

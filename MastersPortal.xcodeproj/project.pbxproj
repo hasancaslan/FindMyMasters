@@ -16,6 +16,7 @@
 		F3115C7B2667CD4B0057569D /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3115C7A2667CD4B0057569D /* DatabaseService.swift */; };
 		F3115C802667CDE10057569D /* Constants+Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3115C7E2667CDE10057569D /* Constants+Labels.swift */; };
 		F3115C812667CDE10057569D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3115C7F2667CDE10057569D /* Constants.swift */; };
+		F31A2C9F266EE0E100B6FAF2 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31A2C9E266EE0E100B6FAF2 /* Utilities.swift */; };
 		F31E83C226516FFC001AE0FF /* FeaturedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31E83C126516FFB001AE0FF /* FeaturedSection.swift */; };
 		F31E83C42651703D001AE0FF /* SectionTitleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31E83C32651703D001AE0FF /* SectionTitleSection.swift */; };
 		F31E83C626517058001AE0FF /* DiciplinesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31E83C526517058001AE0FF /* DiciplinesSection.swift */; };
@@ -83,7 +84,9 @@
 		F3D00AB3266E9EB0007D7C42 /* CheapProgramDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D00AB2266E9EB0007D7C42 /* CheapProgramDataContainer.swift */; };
 		F3D00AB5266EA04E007D7C42 /* CheapProgramSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D00AB4266EA04E007D7C42 /* CheapProgramSearchViewController.swift */; };
 		F3D00AB7266EC459007D7C42 /* MultiProgramSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D00AB6266EC459007D7C42 /* MultiProgramSearchViewController.swift */; };
-		F3D00AB9266EC4B7007D7C42 /* MutiProgramDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D00AB8266EC4B7007D7C42 /* MutiProgramDataContainer.swift */; };
+		F3D00ABB266ED336007D7C42 /* ProgramDetailListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D00ABA266ED335007D7C42 /* ProgramDetailListCell.swift */; };
+		F3D00ABD266ED33D007D7C42 /* ProgramDetailListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D00ABC266ED33C007D7C42 /* ProgramDetailListCell.xib */; };
+		F3D00ABF266ED4B4007D7C42 /* LastMinuteProgramSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D00ABE266ED4B4007D7C42 /* LastMinuteProgramSearchViewController.swift */; };
 		F3FB53AE266D355E00961877 /* ProgramDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3FB53AD266D355E00961877 /* ProgramDetail.storyboard */; };
 		F3FB53B0266D450400961877 /* ProgramDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB53AF266D450400961877 /* ProgramDetailViewController.swift */; };
 		F3FB53B2266D720300961877 /* ProgramDetailDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB53B1266D720300961877 /* ProgramDetailDataContainer.swift */; };
@@ -104,6 +107,7 @@
 		F3115C7A2667CD4B0057569D /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		F3115C7E2667CDE10057569D /* Constants+Labels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constants+Labels.swift"; sourceTree = "<group>"; };
 		F3115C7F2667CDE10057569D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F31A2C9E266EE0E100B6FAF2 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F31E83C126516FFB001AE0FF /* FeaturedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedSection.swift; sourceTree = "<group>"; };
 		F31E83C32651703D001AE0FF /* SectionTitleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleSection.swift; sourceTree = "<group>"; };
 		F31E83C526517058001AE0FF /* DiciplinesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiciplinesSection.swift; sourceTree = "<group>"; };
@@ -173,7 +177,9 @@
 		F3D00AB2266E9EB0007D7C42 /* CheapProgramDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapProgramDataContainer.swift; sourceTree = "<group>"; };
 		F3D00AB4266EA04E007D7C42 /* CheapProgramSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheapProgramSearchViewController.swift; sourceTree = "<group>"; };
 		F3D00AB6266EC459007D7C42 /* MultiProgramSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiProgramSearchViewController.swift; sourceTree = "<group>"; };
-		F3D00AB8266EC4B7007D7C42 /* MutiProgramDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutiProgramDataContainer.swift; sourceTree = "<group>"; };
+		F3D00ABA266ED335007D7C42 /* ProgramDetailListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailListCell.swift; sourceTree = "<group>"; };
+		F3D00ABC266ED33C007D7C42 /* ProgramDetailListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgramDetailListCell.xib; sourceTree = "<group>"; };
+		F3D00ABE266ED4B4007D7C42 /* LastMinuteProgramSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMinuteProgramSearchViewController.swift; sourceTree = "<group>"; };
 		F3FB53AD266D355E00961877 /* ProgramDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProgramDetail.storyboard; sourceTree = "<group>"; };
 		F3FB53AF266D450400961877 /* ProgramDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailViewController.swift; sourceTree = "<group>"; };
 		F3FB53B1266D720300961877 /* ProgramDetailDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailDataContainer.swift; sourceTree = "<group>"; };
@@ -308,6 +314,8 @@
 				F39E67FE26508AF8002756CC /* ProgramDetailTitleCell.xib */,
 				F3D00AAE266E9A5A007D7C42 /* CheapProgramCell.swift */,
 				F3D00AB0266E9A66007D7C42 /* CheapProgramCell.xib */,
+				F3D00ABA266ED335007D7C42 /* ProgramDetailListCell.swift */,
+				F3D00ABC266ED33C007D7C42 /* ProgramDetailListCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -328,6 +336,7 @@
 				F35FEF76264B38E30003B042 /* NSObject+ListDiffable.swift */,
 				F3D00A9E266E35AC007D7C42 /* UITableView+Extensions.swift */,
 				F3D00AA0266E429A007D7C42 /* UIView+Constraints.swift */,
+				F31A2C9E266EE0E100B6FAF2 /* Utilities.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -441,7 +450,6 @@
 				F31FE5E42651F179005DCD14 /* SimpleListAdapterDataSource.swift */,
 				F3FB53B1266D720300961877 /* ProgramDetailDataContainer.swift */,
 				F3D00AB2266E9EB0007D7C42 /* CheapProgramDataContainer.swift */,
-				F3D00AB8266EC4B7007D7C42 /* MutiProgramDataContainer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -507,6 +515,7 @@
 				F36C543D2647637F001C4526 /* DecideViewController.swift */,
 				F3D00AB4266EA04E007D7C42 /* CheapProgramSearchViewController.swift */,
 				F3D00AB6266EC459007D7C42 /* MultiProgramSearchViewController.swift */,
+				F3D00ABE266ED4B4007D7C42 /* LastMinuteProgramSearchViewController.swift */,
 			);
 			name = Decide;
 			sourceTree = "<group>";
@@ -592,6 +601,7 @@
 				F3FB53AE266D355E00961877 /* ProgramDetail.storyboard in Resources */,
 				F36C541226473B12001C4526 /* Main.storyboard in Resources */,
 				F3D00AB1266E9A66007D7C42 /* CheapProgramCell.xib in Resources */,
+				F3D00ABD266ED33D007D7C42 /* ProgramDetailListCell.xib in Resources */,
 				F33B5884265D993700832F88 /* Apply.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,7 +674,9 @@
 				F36C545626487AE4001C4526 /* FeaturedItemViewModel.swift in Sources */,
 				F3D00A9F266E35AD007D7C42 /* UITableView+Extensions.swift in Sources */,
 				F36AE6322667D0F20018E7DE /* DataServiceProtocol.swift in Sources */,
+				F3D00ABB266ED336007D7C42 /* ProgramDetailListCell.swift in Sources */,
 				F36C546626489265001C4526 /* DiciplineItemViewModel.swift in Sources */,
+				F31A2C9F266EE0E100B6FAF2 /* Utilities.swift in Sources */,
 				F36C545E26489011001C4526 /* SectionTitleViewModel.swift in Sources */,
 				F35FEF77264B38E30003B042 /* NSObject+ListDiffable.swift in Sources */,
 				F3D00AAF266E9A5A007D7C42 /* CheapProgramCell.swift in Sources */,
@@ -683,6 +695,7 @@
 				F3D00AB3266E9EB0007D7C42 /* CheapProgramDataContainer.swift in Sources */,
 				F31E83C826517079001AE0FF /* CountriesSection.swift in Sources */,
 				F35C539C2652F8A8007FB3EA /* SectionViewModel.swift in Sources */,
+				F3D00ABF266ED4B4007D7C42 /* LastMinuteProgramSearchViewController.swift in Sources */,
 				F35C539F2652FDAA007FB3EA /* StretchyCollectionViewFlowLayout.swift in Sources */,
 				F36C5431264755D5001C4526 /* IB-Segues+Generated.swift in Sources */,
 				F36C543E2647637F001C4526 /* DecideViewController.swift in Sources */,
@@ -691,7 +704,6 @@
 				F3115C712666EAE20057569D /* Place.swift in Sources */,
 				F33B5882265D992500832F88 /* ApplyViewController.swift in Sources */,
 				F36AE6342667D12A0018E7DE /* DataService.swift in Sources */,
-				F3D00AB9266EC4B7007D7C42 /* MutiProgramDataContainer.swift in Sources */,
 				F36C540B26473B12001C4526 /* AppDelegate.swift in Sources */,
 				F36C542426475594001C4526 /* BartyCrouch.swift in Sources */,
 				F36C5444264773FC001C4526 /* +UINavigationController.swift in Sources */,
