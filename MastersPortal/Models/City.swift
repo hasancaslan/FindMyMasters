@@ -7,7 +7,7 @@
 
 import IGListKit
 
-class City {
+class City: Codable {
     var name: String
     var country: String
     var qualityOfLifeIndex: Double
@@ -46,7 +46,7 @@ class City {
         self.climateIndex = climateIndex
     }
 
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey, CaseIterable {
         case name = "City"
         case country = "Country"
         case qualityOfLifeIndex = "Quality_of_Life_Index"

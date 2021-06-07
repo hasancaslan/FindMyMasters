@@ -13,6 +13,7 @@ class Program: Codable {
     var duration: String
     var type: String
     var language: String
+    var url: String
 
     init(
         name: String,
@@ -20,21 +21,23 @@ class Program: Codable {
         duration: String,
         type: String,
         language: String,
-        about: String
+        url: String
     ) {
         self.name = name
         self.university = university
         self.duration = duration
         self.type = type
         self.language = language
+        self.url = url
     }
 
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey, CaseIterable {
         case university = "university_name"
         case name = "program_name"
         case type = "program_type"
         case duration
         case language
+        case url = "program_url"
     }
 }
 

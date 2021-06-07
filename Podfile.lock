@@ -1,68 +1,50 @@
 PODS:
-  - BulletinBoard (5.0.0)
-  - Cards (1.4.0):
-    - Player (= 0.13.0)
   - Eureka (5.3.3)
-  - FLEX (4.4.1)
+  - FlagKit (2.2)
   - IGListDiffKit (4.0.0)
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
   - JGProgressHUD (2.2)
+  - Parchment (3.0.1)
   - PKHUD (5.3.0)
-  - Player (0.13.0)
-  - SnapKit (5.0.1)
+  - SkeletonView (1.15.0)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
-  - SwiftMessages (9.0.2):
-    - SwiftMessages/App (= 9.0.2)
-  - SwiftMessages/App (9.0.2)
-  - ViewAnimator (3.0.2)
 
 DEPENDENCIES:
-  - BulletinBoard
-  - Cards
   - Eureka
-  - FLEX
+  - FlagKit
   - IGListKit
   - JGProgressHUD
+  - Parchment
   - PKHUD
-  - SnapKit
+  - SkeletonView
   - SQLite.swift
-  - SwiftMessages
-  - ViewAnimator
 
 SPEC REPOS:
   trunk:
-    - BulletinBoard
-    - Cards
     - Eureka
-    - FLEX
+    - FlagKit
     - IGListDiffKit
     - IGListKit
     - JGProgressHUD
+    - Parchment
     - PKHUD
-    - Player
-    - SnapKit
+    - SkeletonView
     - SQLite.swift
-    - SwiftMessages
-    - ViewAnimator
 
 SPEC CHECKSUMS:
-  BulletinBoard: dba77053c2a7b64953f63073f7534165af2edd21
-  Cards: 45ae6bd0eca7b5e8016d3b6cb30b60b04753f68f
   Eureka: e6d720290c56bb23333ad1a0e020b2a98a0e9a43
-  FLEX: 7ca2c8cd3a435ff501ff6d2f2141e9bdc934eaab
+  FlagKit: eca7dc89064b0c986302ba9acefad1bf80a435b1
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  Parchment: 466a1cfb6151780db8acb4bbedc2d9c6bfa1e2ff
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
-  Player: 968d8d07d923bcdd6f7e4091c9e306eb44a5f7a4
-  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SkeletonView: cac18a3ac4f893b09d99e65072d806ef08377aae
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
-  SwiftMessages: 77b847d1405f99046ffbd0d856bc7d73e6892686
-  ViewAnimator: 16435576cd44fca0b0d63147d5031fd3e91d295a
 
-PODFILE CHECKSUM: 5f53c96be11bb6c64e42b23f5e66b4ca864b183d
+PODFILE CHECKSUM: 18e471beeff956b1fa8fbbc0fc243bf99001c59f
 
 COCOAPODS: 1.10.1

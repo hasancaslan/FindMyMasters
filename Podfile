@@ -7,27 +7,27 @@ target 'MastersPortal' do
 
   # Pods for MastersPortal
   # autolayout
-  pod 'SnapKit'
+  #pod 'SnapKit'
 
   # activity indicator
   pod 'JGProgressHUD'
   pod 'PKHUD'
 
   # custom UI
-  pod 'Cards'
-  pod 'SwiftMessages'
-  pod 'BulletinBoard'
   pod 'Eureka'
+  pod 'FlagKit'
+  pod 'Parchment'
 
   # animations
-  pod 'ViewAnimator'
+  #pod 'ViewAnimator'
+  pod 'SkeletonView'
 
   # Data
   pod 'SQLite.swift'
   pod 'IGListKit'
 
   # Debug
-  pod 'FLEX', :configurations => ['Debug']
+  #pod 'FLEX', :configurations => ['Debug']
 
 end
 

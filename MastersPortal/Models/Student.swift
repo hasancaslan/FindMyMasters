@@ -6,6 +6,7 @@
 //
 
 import IGListKit
+import SQLite
 
 class Student: Codable {
     var name: String
@@ -29,6 +30,15 @@ class Student: Codable {
         self.ssn = ssn
         self.languages = languages
         self.sid = sid
+    }
+
+    enum CodingKeys: String, CodingKey, CaseIterable {
+        case name
+        case gender
+        case birthday
+        case ssn
+        case languages
+        case sid
     }
 }
 

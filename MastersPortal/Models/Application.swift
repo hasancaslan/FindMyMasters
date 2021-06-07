@@ -6,6 +6,7 @@
 //
 
 import IGListKit
+import SQLite
 
 class Application: Codable {
     var universityName: String
@@ -36,7 +37,7 @@ class Application: Codable {
         self.aid = aid
     }
 
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey, CaseIterable {
         case universityName = "university_name"
         case programName = "program_name"
         case programType = "program_type"

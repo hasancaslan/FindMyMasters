@@ -45,15 +45,14 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XtA-Ws-nyd">
-                        <rect key="frame" x="4" y="108" width="334" height="214"/>
+                        <rect key="frame" x="4" y="108" width="334" height="216"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mg4-vD-yjy">
-                                <rect key="frame" x="0.0" y="0.0" width="334" height="214"/>
+                                <rect key="frame" x="0.0" y="0.0" width="334" height="216"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="PrimaryColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="XtA-Ws-nyd" secondAttribute="height" multiplier="167:107" id="Mb7-gy-isb"/>
                             <constraint firstAttribute="trailing" secondItem="mg4-vD-yjy" secondAttribute="trailing" id="Set-SR-iKO"/>
                             <constraint firstItem="mg4-vD-yjy" firstAttribute="top" secondItem="XtA-Ws-nyd" secondAttribute="top" id="VFH-xh-GbY"/>
                             <constraint firstItem="mg4-vD-yjy" firstAttribute="leading" secondItem="XtA-Ws-nyd" secondAttribute="leading" id="hos-QX-BiE"/>
@@ -62,6 +61,7 @@
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="XtA-Ws-nyd" secondAttribute="bottom" id="0ey-Ku-yF1"/>
                     <constraint firstAttribute="trailing" secondItem="VpK-UW-cvP" secondAttribute="trailing" constant="4" id="18V-b7-NVN"/>
                     <constraint firstItem="UWg-ge-v1Z" firstAttribute="trailing" secondItem="XtA-Ws-nyd" secondAttribute="trailing" id="4DB-xs-aw5"/>
                     <constraint firstItem="yVJ-Kh-wpV" firstAttribute="leading" secondItem="7ru-U8-rLZ" secondAttribute="leading" constant="4" id="5oQ-dC-pMN"/>

@@ -47,7 +47,10 @@ extension CountriesSectionController: ListBindingSectionControllerDataSource {
 
 extension CountriesSectionController: ListBindingSectionControllerSelectionDelegate {
     func sectionController(_: ListBindingSectionController<ListDiffable>, didSelectItemAt index: Int, viewModel _: Any) {
-        print("Selected: \(String(describing: viewModel?.cells[index]))")
+        guard let countryName = viewModel?.cells[index].title else { return }
+        let cityListVC = StoryboardScene.City.cityListViewController.instantiate()
+        cityListVC.countryName = countryName
+        viewController?.navigationController?.pushViewController(cityListVC, animated: true)
     }
 
     func sectionController(_: ListBindingSectionController<ListDiffable>, didDeselectItemAt _: Int, viewModel _: Any) {}

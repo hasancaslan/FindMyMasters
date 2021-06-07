@@ -35,8 +35,5 @@ extension TitleSectionController {
 extension TitleSectionController: SectionTitleCellDelegate {
     func didTapNavigation(cell _: SectionTitleCell) {
         print("See All")
-        let controller = ProgramDetailViewController()
-        controller.modalPresentationStyle = .overFullScreen
-        viewController?.present(controller, animated: true, completion: nil)
     }
 }

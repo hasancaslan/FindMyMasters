@@ -2,116 +2,107 @@
 //  ProgramDetailViewController.swift
 //  MastersPortal
 //
-//  Created by HASAN CAN on 15/5/21.
+//  Created by HASAN CAN on 6/6/21.
 //
 
-import IGListKit
+import UIKit
 
 class ProgramDetailViewController: UIViewController {
-    let padding: CGFloat = 20
-    private var headerView: StretchyHeaderView?
-    let viewModel: ListAdapterViewModel = SimpleListAdapterViewModel(MockDetailViewModel().sections)
+    @IBOutlet var universityNameLabel: UILabel!
+    @IBOutlet var programNameLabel: UILabel!
 
-    lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
-        collectionView.backgroundColor = .systemBackground
+    @IBOutlet var deadlineLabel: UILabel!
+    @IBOutlet var deadlineView: UIView!
 
-        collectionView.register(
-            StretchyHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StretchyHeaderView.reuseIdentifier)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CollectionCell")
+    @IBOutlet var languageLabel: UILabel!
+    @IBOutlet var languageView: UIView!
 
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.minimumLineSpacing = 10
-            layout.sectionInset = .init(top: 0, left: 20, bottom: 20, right: 20)
-        }
+    @IBOutlet var tutionLabel: UILabel!
+    @IBOutlet var tutionView: UIView!
 
-        collectionView.dataSource = self
-        collectionView.delegate = self
+    @IBOutlet var durationLabel: UILabel!
+    @IBOutlet var durationView: UIView!
 
-        return collectionView
-    }()
+    @IBOutlet var cityView: UIView!
+    @IBOutlet var cityNameLabel: UILabel!
+    @IBOutlet var countryNameLabel: UILabel!
 
-    lazy var collectionViewLayout: UICollectionViewLayout = {
-        let layout = StretchyCollectionViewFlowLayout { sectionIndex, _ -> NSCollectionLayoutSection? in
-            var section = self.viewModel.layout(at: sectionIndex)
-            if sectionIndex == 0 {
-                let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
-                let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerItemSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
-                section?.boundarySupplementaryItems = [headerItem]
-            }
+    @IBOutlet var requirementsTextField: UITextView!
 
-            return section
-        }
+    @IBOutlet var applyButton: UIButton!
 
-        return layout
-    }()
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
-    }
+    var model: ProgramDetailDataContainer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addCollectionView()
+        setSmoothCorners()
+        configureView(model: model)
     }
 
-    private func addCollectionView() {
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(collectionView)
-
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
-    }
-}
-
-extension ProgramDetailViewController: UICollectionViewDataSource {
-    func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
-        30
+    private func setSmoothCorners() {
+        deadlineView.layer.cornerRadius = 13
+        languageView.layer.cornerRadius = 13
+        tutionView.layer.cornerRadius = 13
+        durationView.layer.cornerRadius = 13
+        applyButton.layer.cornerRadius = 13
+        cityView.layer.cornerRadius = 13
+        requirementsTextField.layer.cornerRadius = 13
     }
 
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard kind == UICollectionView.elementKindSectionHeader,
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: StretchyHeaderView.reuseIdentifier, for: indexPath)
-                as? StretchyHeaderView
-        else { fatalError() }
-        header.configure(Asset.DemoImages.kuCyber.image)
-        headerView = header
-        return header
+    public func configureView(model: ProgramDetailDataContainer) {
+        universityNameLabel.text = model.program.university
+        programNameLabel.text = model.program.name
+
+        deadlineLabel.text = model.term.deadline
+        languageLabel.text = model.program.language
+        tutionLabel.text = "\(model.term.tution1Money) \(model.term.tution1Currency)"
+        durationLabel.text = model.program.duration
+
+        cityNameLabel.text = model.place.cityName
+        countryNameLabel.text = model.place.countryName
+
+        requirementsTextField.attributedText = model.term.academicRequirement.htmlToAttributedString
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //        if indexPath.item == 0 {
-        //            return collectionView.dequeueReusableCell(withReuseIdentifier: QuickFactCell.reuseIdentifier, for: indexPath)
-        //        }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath)
-        cell.backgroundColor = .black
-        return cell
-    }
-}
-
-extension ProgramDetailViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
-        CGSize(width: view.frame.width - 2 * padding, height: 44)
-    }
-
-    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, referenceSizeForHeaderInSection _: Int) -> CGSize {
-        CGSize(width: view.frame.width, height: 340)
-    }
-}
-
-// MARK: - UIScrollViewDelegate
-
-extension ProgramDetailViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contentOffsetY = scrollView.contentOffset.y
-        if contentOffsetY < -padding {
-            headerView?.animator.fractionComplete = abs(contentOffsetY) / 200
-        } else {
-            headerView?.animator.fractionComplete = 0.0
+    @IBAction func presentCityDetails(_ sender: Any) {
+        guard let city = DatabaseService.shared.findCity(name: model.place.cityName, country: model.place.countryName) else {
+            let alert = UIAlertController(title: "Couldn't find city.", message: nil, preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel)
+            alert.addAction(action)
+            present(alert, animated: true)
+            return
         }
+
+        let cityDetailVC = StoryboardScene.City.cityDetailViewController.instantiate()
+        cityDetailVC.city = city
+        present(cityDetailVC, animated: true)
+    }
+
+    @IBAction func applyToProgram(_ sender: Any) {}
+
+    /*
+     // MARK: - Navigation
+
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+     }
+     */
+}
+
+extension String {
+    var htmlToAttributedString: NSAttributedString? {
+        guard let data = data(using: .utf8) else { return nil }
+        do {
+            return try NSAttributedString(
+                data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            return nil
+        }
+    }
+
+    var htmlToString: String {
+        return htmlToAttributedString?.string ?? ""
     }
 }

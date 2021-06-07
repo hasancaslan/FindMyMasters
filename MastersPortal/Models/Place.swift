@@ -41,7 +41,7 @@ class Place: Codable {
         self.cityName = cityName
     }
 
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey, CaseIterable {
         case universityName = "university_name"
         case programName = "program_name"
         case countryName = "country_name"

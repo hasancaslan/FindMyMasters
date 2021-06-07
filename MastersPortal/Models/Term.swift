@@ -76,7 +76,7 @@ class Term: Codable {
         self.tuitionPriceSpecification = tuitionPriceSpecification
     }
 
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey, CaseIterable {
         case universityName = "university_name"
         case programName = "program_name"
         case deadline

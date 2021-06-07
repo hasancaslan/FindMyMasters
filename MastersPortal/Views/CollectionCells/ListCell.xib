@@ -20,10 +20,18 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXr-sL-yX3">
                         <rect key="frame" x="20" y="5" width="40" height="40"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Coj-Pr-4DW">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                            </imageView>
+                        </subviews>
                         <constraints>
+                            <constraint firstItem="Coj-Pr-4DW" firstAttribute="top" secondItem="LXr-sL-yX3" secondAttribute="top" id="AUm-Uy-G5h"/>
                             <constraint firstAttribute="width" constant="40" id="JC4-Hq-eYe"/>
                             <constraint firstAttribute="height" constant="40" id="Q16-d7-KbK"/>
+                            <constraint firstItem="Coj-Pr-4DW" firstAttribute="leading" secondItem="LXr-sL-yX3" secondAttribute="leading" id="Vye-hf-JRD"/>
+                            <constraint firstAttribute="trailing" secondItem="Coj-Pr-4DW" secondAttribute="trailing" id="guR-Ev-dHu"/>
+                            <constraint firstAttribute="bottom" secondItem="Coj-Pr-4DW" secondAttribute="bottom" id="zQs-Xe-neW"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srf-CI-MQF">
@@ -53,6 +61,7 @@
             </collectionViewCellContentView>
             <connections>
                 <outlet property="iconView" destination="LXr-sL-yX3" id="GIH-Ct-18K"/>
+                <outlet property="imageView" destination="Coj-Pr-4DW" id="Tsq-3c-QYg"/>
                 <outlet property="titleLabel" destination="srf-CI-MQF" id="rbz-NJ-6B6"/>
             </connections>
             <point key="canvasLocation" x="-32.608695652173914" y="191.51785714285714"/>
@@ -61,9 +70,6 @@
     <resources>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
