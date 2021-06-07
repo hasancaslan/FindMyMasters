@@ -260,12 +260,11 @@
                                     <constraint firstAttribute="height" constant="55" id="ikw-3d-wJ2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <color key="tintColor" name="AccentColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="  Quick Apply" image="paperplane.fill" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="apply:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CnM-II-oje"/>
                                     <action selector="applyToProgram:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pbI-Cc-Av4"/>
                                 </connections>
                             </button>
