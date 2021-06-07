@@ -21,7 +21,7 @@ final class DatabaseService {
 
     private init() {
         do {
-            let databaseFilePath = Bundle.main.path(forResource: "mastersportal", ofType: "sqlite")!
+            let databaseFilePath = Bundle.main.path(forResource: "mastersportal", ofType: "sqlite3")!
             DB = try Connection(databaseFilePath)
         } catch {
             print("Could not connect to db.")
@@ -47,7 +47,6 @@ final class DatabaseService {
 
         do {
             let loadedRows: [Program] = try db.prepare(programsTable).map { row in
-                print(row)
                 return try row.decode()
             }
 
@@ -57,7 +56,7 @@ final class DatabaseService {
             return nil
         }
     }
-    
+
     func getAllCitiesInCountry(country: String) -> [City]? {
         guard let db = DB else {
             connectionError()
@@ -67,7 +66,7 @@ final class DatabaseService {
         let queryString = "SELECT * FROM CITY WHERE Country = '\(country)'"
         let countryColumn = Expression<String>(City.CodingKeys.country.rawValue)
         let query = citiesTable.filter(countryColumn == country)
-        
+
         do {
             let loadedCities: [City] = try db.prepare(query).map { row in
                 try row.decode()
@@ -90,7 +89,7 @@ final class DatabaseService {
         let nameColumn = Expression<String>(City.CodingKeys.name.rawValue)
         let countryColumn = Expression<String>(City.CodingKeys.country.rawValue)
         let query = citiesTable.filter(nameColumn == name && countryColumn == country)
-        
+
         do {
             let loadedCities: [City] = try db.prepare(query).map { row in
                 try row.decode()
@@ -101,6 +100,55 @@ final class DatabaseService {
             decodeError(table: "CITY", error: error)
             return nil
         }
+    }
+
+    func getProgramDetails(name: String, university: String) -> ProgramDetailDataContainer? {
+        guard let db = DB else {
+            connectionError()
+            return nil
+        }
+
+        let query = """
+            SELECT P.university_name,
+                   P.program_name,
+                   T.deadline,
+                   P.language,
+                   P.duration,
+                   P2.city,
+                   P2.country_name,
+                   T.tution_1_money,
+                   T.tution_1_currency,
+                   T.academic_req
+            FROM PROGRAMS P
+                     JOIN PLACES P2 on P.program_name = P2.program_name
+                AND P.university_name = P2.university_name
+                     JOIN TERMS T on P.program_name = T.program_name
+                AND P.university_name = T.university_name
+            WHERE P.program_name = '\(name)'
+              AND P.university_name = '\(university)';
+            """
+
+        do {
+            let stmt = try db.prepare(query)
+            for row in stmt {
+               return ProgramDetailDataContainer(
+                    universityName: row[0] as! String,
+                    programName: row[1] as! String,
+                    deadline: row[2] as! String,
+                    language: row[3] as! String,
+                    duration: row[4] as! String,
+                    cityName: row[5] as! String,
+                    countryName: row[6] as! String,
+                    tution1Money: Int(row[7] as! Int64),
+                    tution1Currency: row[8] as! String,
+                    academicRequirement: row[9] as! String)
+            }
+        } catch {
+            decodeError(table: "PROGRAM DETAILS", error: error)
+           
+        }
+        
+        return nil
     }
 
     func getAllPlaces() {

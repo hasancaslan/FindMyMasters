@@ -16,10 +16,11 @@ class ExploreViewController: UIViewController {
 
         let countriesViewModel = SimpleListAdapterDataSource(CountriesViewModel().sections)
         let featuredViewModel = SimpleListAdapterDataSource(FeaturedViewModel().sections)
+        let programsViewModel = DatabaseService.shared.getAllPrograms()
         let viewControllers = [
             ExplorePageViewController(title: "Featured", dataSource: featuredViewModel),
             ExplorePageViewController(title: "Countries", dataSource: countriesViewModel),
-            ExplorePageViewController(title: "Programs", dataSource: countriesViewModel),
+            ProgramPageViewController(title: "Programs", dataSource: programsViewModel),
         ]
 
         let pagingViewController = PagingViewController(viewControllers: viewControllers)

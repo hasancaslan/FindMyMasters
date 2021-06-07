@@ -50,22 +50,22 @@ class ProgramDetailViewController: UIViewController {
     }
 
     public func configureView(model: ProgramDetailDataContainer) {
-        universityNameLabel.text = model.program.university
-        programNameLabel.text = model.program.name
+        universityNameLabel.text = model.universityName
+        programNameLabel.text = model.programName
 
-        deadlineLabel.text = model.term.deadline
-        languageLabel.text = model.program.language
-        tutionLabel.text = "\(model.term.tution1Money) \(model.term.tution1Currency)"
-        durationLabel.text = model.program.duration
+        deadlineLabel.text = formatTimestamp(model.deadline)
+        languageLabel.text = model.language
+        tutionLabel.text = model.tution
+        durationLabel.text = model.duration
 
-        cityNameLabel.text = model.place.cityName
-        countryNameLabel.text = model.place.countryName
+        cityNameLabel.text = model.cityName
+        countryNameLabel.text = model.countryName
 
-        requirementsTextField.attributedText = model.term.academicRequirement.htmlToAttributedString
+        requirementsTextField.attributedText = model.academicRequirement.htmlToAttributedString
     }
 
     @IBAction func presentCityDetails(_ sender: Any) {
-        guard let city = DatabaseService.shared.findCity(name: model.place.cityName, country: model.place.countryName) else {
+        guard let city = DatabaseService.shared.findCity(name: model.cityName, country: model.countryName) else {
             let alert = UIAlertController(title: "Couldn't find city.", message: nil, preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .cancel)
             alert.addAction(action)
@@ -78,17 +78,25 @@ class ProgramDetailViewController: UIViewController {
         present(cityDetailVC, animated: true)
     }
 
+    private func formatTimestamp(_ timestamp: String) -> String? {
+        var dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        guard let date = dateFormatter.date(from: timestamp) else { return nil }
+        
+        
+        dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_GB")
+        dateFormatter.setLocalizedDateFormatFromTemplate("dMMMyyyy")
+        return dateFormatter.string(from: date)
+    }
+
     @IBAction func applyToProgram(_ sender: Any) {}
 
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
+    @IBAction func close(_ sender: Any) {
+        dismiss(animated: true)
+    }
 }
 
 extension String {

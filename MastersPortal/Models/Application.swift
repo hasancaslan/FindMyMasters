@@ -11,7 +11,6 @@ import SQLite
 class Application: Codable {
     var universityName: String
     var programName: String
-    var programType: String
     var sid: Int
     var aid: Int
 
@@ -24,7 +23,6 @@ class Application: Codable {
     ) {
         self.universityName = universityName
         self.programName = programName
-        self.programType = programType
         self.sid = sid
         self.aid = aid
     }
@@ -32,7 +30,6 @@ class Application: Codable {
     init(program: Program, student: Student, aid: Int) {
         self.universityName = program.university
         self.programName = program.name
-        self.programType = program.type
         self.sid = student.sid
         self.aid = aid
     }
@@ -40,7 +37,6 @@ class Application: Codable {
     enum CodingKeys: String, CodingKey, CaseIterable {
         case universityName = "university_name"
         case programName = "program_name"
-        case programType = "program_type"
         case sid
         case aid
     }

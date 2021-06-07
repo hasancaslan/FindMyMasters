@@ -5,7 +5,6 @@
 //  Created by HASAN CAN on 7/6/21.
 //
 
-import SkeletonView
 import UIKit
 
 class CityListViewController: UIViewController {
@@ -22,13 +21,12 @@ class CityListViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        view.showAnimatedGradientSkeleton()
         loadCities(in: countryName)
     }
 
     func loadCities(in country: String) {
         cities = DatabaseService.shared.getAllCitiesInCountry(country: country)
-        view.hideSkeleton()
+
         tableView.reloadData()
     }
 }
@@ -42,26 +40,15 @@ extension CityListViewController: UITableViewDelegate {
     }
 }
 
-extension CityListViewController: SkeletonTableViewDataSource {
+extension CityListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = cities?.count else {
-            if !view.isSkeletonActive {
-                tableView.setEmptyView(title: "Cities not found.", message: "There is no city has a Master's Program in \(countryName ?? "country").")
-            }
-
+        if cities == nil {
+            tableView.setEmptyView(title: "Cities not found.", message: "There is no city has a Master's Program in \(countryName ?? "country").")
             return 0
+        } else {
+            tableView.restore()
+            return cities!.count
         }
-
-        tableView.restore()
-        return count
-    }
-
-    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
-    }
-
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
-        "CityListCell"
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
