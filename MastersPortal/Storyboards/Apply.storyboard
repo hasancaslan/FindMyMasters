@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="ApplyViewController" customModule="MastersPortal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -26,11 +26,11 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="68.973214285714278"/>
         </scene>
-        <!--Decide-->
+        <!--Apply-->
         <scene sceneID="3yz-0h-f2h">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L48-Xb-T4Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Decide" image="pencil" id="Uy2-4h-meb" userLabel="Apply" customClass="AnimatedTabBarItem" customModule="AnimatedTabBar">
+                    <tabBarItem key="tabBarItem" title="Apply" image="pencil" id="Uy2-4h-meb" userLabel="Apply" customClass="AnimatedTabBarItem" customModule="AnimatedTabBar">
                         <connections>
                             <outlet property="animation" destination="Wjg-03-Veq" id="Lyu-HZ-kDa"/>
                         </connections>

@@ -6,26 +6,52 @@
 //
 
 import Eureka
+import PKHUD
 
 class ApplyViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.configureNavigationBar()
         navigationItem.title = L10n.Apply.Navigation.title
+        title = L10n.Apply.Navigation.title
 
-        form +++ Section("Section1")
+        form +++ Section("Student")
             <<< TextRow { row in
-                row.title = "Text Row"
-                row.placeholder = "Enter text here"
+                row.title = "Name"
+                row.placeholder = "Enter name here"
             }
-            <<< PhoneRow {
-                $0.title = "Phone Row"
-                $0.placeholder = "And numbers here"
+            <<< TextRow { row in
+                row.title = "Gender"
+                row.placeholder = "Enter gender here"
             }
-            +++ Section("Section2")
             <<< DateRow {
-                $0.title = "Date Row"
+                $0.title = "Birthday"
                 $0.value = Date(timeIntervalSinceReferenceDate: 0)
+            }
+            <<< IntRow {
+                $0.title = "Social security number"
+                $0.placeholder = "Enter SSN here"
+            }
+            +++ Section("Program")
+            <<< TextRow { row in
+                row.title = "University"
+                row.placeholder = "Enter university here"
+            }
+            <<< TextRow { row in
+                row.title = "Program"
+                row.placeholder = "Enter program here"
+            }
+            +++ Section()
+            <<< ButtonRow { row in
+                row.title = "Submit"
+            }.onCellSelection { cell, row in
+                PKHUD.sharedHUD.contentView = PKHUDSuccessView()
+                PKHUD.sharedHUD.show()
+                PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
+                    // Completion Handler
+                }
+            }.cellSetup { cell, row in
+                cell.backgroundColor = Asset.Colors.primaryColor.color
             }
     }
 

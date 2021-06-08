@@ -26,10 +26,19 @@ internal enum Asset {
     internal static let primaryColor = ColorAsset(name: "PrimaryColor")
   }
   internal enum DemoImages {
+    internal static let _1 = ImageAsset(name: "1")
+    internal static let _2 = ImageAsset(name: "2")
+    internal static let _3 = ImageAsset(name: "3")
+    internal static let _4 = ImageAsset(name: "4")
+    internal static let _5 = ImageAsset(name: "5")
+    internal static let _6 = ImageAsset(name: "6")
+    internal static let _7 = ImageAsset(name: "7")
+    internal static let _8 = ImageAsset(name: "8")
     internal static let kuCyber = ImageAsset(name: "ku-cyber")
   }
   internal enum TabBarIcons {
     internal static let compass = ImageAsset(name: "compass")
+    internal static let pencil = ImageAsset(name: "pencil")
     internal static let target = ImageAsset(name: "target")
   }
   internal static let appIconRounded = ImageAsset(name: "app-icon-rounded")

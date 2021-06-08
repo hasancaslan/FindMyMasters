@@ -78,7 +78,6 @@ class LastMinuteProgramSearchViewController: UIViewController {
     }
 
     func filterContentForSearchText(_ searchText: String, duration: String) {
-     
         filteredData = DatabaseService.shared.getProgramsWithDurationAndIELTSScore(score: Double(searchText) ?? 6.0, duration: duration)
         tableView.reloadData()
     }
@@ -97,8 +96,7 @@ extension LastMinuteProgramSearchViewController: UITableViewDataSource {
         tableView.restore()
         return filtered.count
     }
-    
-    
+
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         182.0
     }
@@ -115,7 +113,6 @@ extension LastMinuteProgramSearchViewController: UITableViewDataSource {
 }
 
 extension LastMinuteProgramSearchViewController: UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 

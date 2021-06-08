@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 func formatTimestamp(_ timestamp: String) -> String? {
     var dateFormatter = DateFormatter()
     dateFormatter.locale = Locale(identifier: "en_US_POSIX")

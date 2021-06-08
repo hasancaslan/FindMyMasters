@@ -11,52 +11,42 @@ import IGListKit
 // MARK: - ListAdapterDataSource
 
 class FeaturedViewModel: NSObject {
-    private let featuredData =
-        [
+    func getFeaturedPrograms() -> [FeaturedSection] {
+        let programs = DatabaseService.shared.getAllPrograms()
+        let filteredPrograms = programs?.filter { $0.university == "Koc University" }
+
+        let popular = filteredPrograms?.compactMap { program in
             FeaturedItemViewModel(
                 caption: "POPULAR",
-                title: "Cyber Security",
-                subtitle: "Koç University",
-                thumbnail: Asset.DemoImages.kuCyber.image
-            ),
+                title: program.name,
+                subtitle: program.university,
+                thumbnail: getRandomPhoto())
+        }
+
+        let popularSection = FeaturedSectionViewModel(cells: popular ?? [])
+
+        let new = filteredPrograms?.compactMap { program in
             FeaturedItemViewModel(
-                caption: "POPULAR",
-                title: "Cyber Security",
-                subtitle: "Koç University",
-                thumbnail: Asset.DemoImages.kuCyber.image
-            ),
-            FeaturedItemViewModel(
-                caption: "POPULAR",
-                title: "Cyber Security",
-                subtitle: "Koç University",
-                thumbnail: Asset.DemoImages.kuCyber.image
-            ),
-            FeaturedItemViewModel(
-                caption: "POPULAR",
-                title: "Cyber Security",
-                subtitle: "Koç University",
-                thumbnail: Asset.DemoImages.kuCyber.image
-            ),
-            FeaturedItemViewModel(
-                caption: "POPULAR",
-                title: "Cyber Security",
-                subtitle: "Koç University",
-                thumbnail: Asset.DemoImages.kuCyber.image
-            )
+                caption: "NEW",
+                title: program.name,
+                subtitle: program.university,
+                thumbnail: getRandomPhoto())
+        }
+
+        let newSection = FeaturedSectionViewModel(cells: new ?? [])
+
+        return [
+            FeaturedSection(popularSection),
+            FeaturedSection(newSection),
         ]
+    }
 
-    private let featuredTitle = SectionTitleViewModel(title: "Featured")
-
-    private let newTitle = SectionTitleViewModel(title: "New Programs")
-
-    private var featuredViewModel: FeaturedSectionViewModel {
-        FeaturedSectionViewModel(cells: featuredData)
+    func getRandomPhoto() -> UIImage {
+        let randomInt = Int.random(in: 1 ..< 9)
+        return UIImage(named: "\(randomInt).jpg") ?? Asset.DemoImages.kuCyber.image
     }
 
     var sections: [CollectionSection] {
-        [
-            FeaturedSection(featuredViewModel),
-            FeaturedSection(featuredViewModel)
-        ]
+        return getFeaturedPrograms()
     }
 }

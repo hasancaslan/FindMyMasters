@@ -108,31 +108,31 @@ final class DatabaseService {
             return nil
         }
         let query = """
-            SELECT *
-            FROM (SELECT tution_1_currency               as currency,
-                         tution_1_money + tution_2_money as total,
-                         country_name,
-                         university_name,
-                         program_name
-                  FROM Terms
-                           NATURAL JOIN Places
-                  WHERE program_name LIKE '%\(field)%'
-                  GROUP BY country_name, total) as q
-            WHERE 2 >= (SELECT count(*)
-                        FROM (SELECT tution_1_currency               as currency,
-                                     tution_1_money + tution_2_money as total,
-                                     country_name,
-                                     university_name,
-                                     program_name
-                              FROM Terms
-                                       NATURAL JOIN Places
-                              WHERE program_name LIKE '%\(field)%'
-                              GROUP BY country_name, total) as q2
-                        WHERE q.country_name = q2.country_name
-                          AND q2.total < q.total)
-            ORDER BY total ASC;
+        SELECT *
+        FROM (SELECT tution_1_currency               as currency,
+                     tution_1_money + tution_2_money as total,
+                     country_name,
+                     university_name,
+                     program_name
+              FROM Terms
+                       NATURAL JOIN Places
+              WHERE program_name LIKE '%\(field)%'
+              GROUP BY country_name, total) as q
+        WHERE 2 >= (SELECT count(*)
+                    FROM (SELECT tution_1_currency               as currency,
+                                 tution_1_money + tution_2_money as total,
+                                 country_name,
+                                 university_name,
+                                 program_name
+                          FROM Terms
+                                   NATURAL JOIN Places
+                          WHERE program_name LIKE '%\(field)%'
+                          GROUP BY country_name, total) as q2
+                    WHERE q.country_name = q2.country_name
+                      AND q2.total < q.total)
+        ORDER BY total ASC;
 
-            """
+        """
 
         do {
             let stmt = try db.prepare(query)
@@ -162,15 +162,15 @@ final class DatabaseService {
         }
 
         let query = """
-            select tution_1_currency as currency, tution_1_money + tution_2_money as total, university_name, program_name
-            from terms
-            where total > 0
-              and program_name in
-                  (select program_name from terms where program_name LIKE '%\(keyword1)%' OR program_name LIKE '%\(keyword2)%')
-            group by total, currency
-            order by total asc;
+        select tution_1_currency as currency, tution_1_money + tution_2_money as total, university_name, program_name
+        from terms
+        where total > 0
+          and program_name in
+              (select program_name from terms where program_name LIKE '%\(keyword1)%' OR program_name LIKE '%\(keyword2)%')
+        group by total, currency
+        order by total asc;
 
-            """
+        """
 
         do {
             let stmt = try db.prepare(query)
@@ -199,19 +199,19 @@ final class DatabaseService {
             return nil
         }
         let query = """
-            SELECT PROGRAMS.university_name,
-                   PROGRAMS.program_name,
-                   PROGRAMS.duration,
-                   PROGRAMS.language
-            FROM PROGRAMS
-                     JOIN PLACES
-                          ON PROGRAMS.university_name = PLACES.university_name
-                              AND PROGRAMS.program_name = PLACES.program_name
-                     JOIN CITY ON PLACES.country_name = CITY.Country
-                AND CITY.City = PLACES.city
-            WHERE CITY.City = '\(name)'
-              AND CITY.Country = '\(country)';
-            """
+        SELECT PROGRAMS.university_name,
+               PROGRAMS.program_name,
+               PROGRAMS.duration,
+               PROGRAMS.language
+        FROM PROGRAMS
+                 JOIN PLACES
+                      ON PROGRAMS.university_name = PLACES.university_name
+                          AND PROGRAMS.program_name = PLACES.program_name
+                 JOIN CITY ON PLACES.country_name = CITY.Country
+            AND CITY.City = PLACES.city
+        WHERE CITY.City = '\(name)'
+          AND CITY.Country = '\(country)';
+        """
 
         do {
             let stmt = try db.prepare(query)
@@ -240,24 +240,24 @@ final class DatabaseService {
         }
 
         let query = """
-            SELECT P.university_name,
-                   P.program_name,
-                   T.deadline,
-                   P.language,
-                   P.duration,
-                   P2.city,
-                   P2.country_name,
-                   T.tution_1_money,
-                   T.tution_1_currency,
-                   T.academic_req
-            FROM PROGRAMS P
-                     JOIN PLACES P2 on P.program_name = P2.program_name
-                AND P.university_name = P2.university_name
-                     JOIN TERMS T on P.program_name = T.program_name
-                AND P.university_name = T.university_name
-            WHERE P.program_name = '\(name)'
-              AND P.university_name = '\(university)';
-            """
+        SELECT P.university_name,
+               P.program_name,
+               T.deadline,
+               P.language,
+               P.duration,
+               P2.city,
+               P2.country_name,
+               T.tution_1_money,
+               T.tution_1_currency,
+               T.academic_req
+        FROM PROGRAMS P
+                 JOIN PLACES P2 on P.program_name = P2.program_name
+            AND P.university_name = P2.university_name
+                 JOIN TERMS T on P.program_name = T.program_name
+            AND P.university_name = T.university_name
+        WHERE P.program_name = '\(name)'
+          AND P.university_name = '\(university)';
+        """
 
         do {
             let stmt = try db.prepare(query)
@@ -288,25 +288,25 @@ final class DatabaseService {
         }
 
         let query = """
-            SELECT DISTINCT university_name,
-                            program_name,
-                            deadline,
-                            language,
-                            duration,
-                            city,
-                            country_name,
-                            tution_1_money + tution_1_money as total,
-                            tution_1_currency,
-                            academic_req,
-                            ielts_score                     as score
-            FROM terms
-                     NATURAL JOIN Places
-                     NATURAL JOIN Programs
-            where strftime('%s', 'now') - strftime('%s', deadline) < 0
-              AND CAST(score AS REAL) <= \(score)
-              AND Programs.duration IN (select programs.duration from programs where duration LIKE '\(duration)%')
-            ORDER BY total DESC, score DESC;
-            """
+        SELECT DISTINCT university_name,
+                        program_name,
+                        deadline,
+                        language,
+                        duration,
+                        city,
+                        country_name,
+                        tution_1_money + tution_1_money as total,
+                        tution_1_currency,
+                        academic_req,
+                        ielts_score                     as score
+        FROM terms
+                 NATURAL JOIN Places
+                 NATURAL JOIN Programs
+        where strftime('%s', 'now') - strftime('%s', deadline) < 0
+          AND CAST(score AS REAL) <= \(score)
+          AND Programs.duration IN (select programs.duration from programs where duration LIKE '\(duration)%')
+        ORDER BY total DESC, score DESC;
+        """
 
         do {
             let stmt = try db.prepare(query)

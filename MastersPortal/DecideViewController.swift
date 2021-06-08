@@ -38,7 +38,7 @@ class DecideViewController: UIViewController {
             DecideCellDataContainer(
                 title: "Quick & Last Minute",
                 subtitle: "still not expired and short programs.",
-                icon: UIImage(systemName: "hare.fill", withConfiguration: largeConfig)!),
+                icon: UIImage(systemName: "hare.fill", withConfiguration: largeConfig)!)
 //            DecideCellDataContainer(
 //                title: "Cheapest in Country",
 //                subtitle: "3 cheapest programs in the given field of each country, if any.",

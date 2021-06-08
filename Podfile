@@ -11,7 +11,7 @@ target 'MastersPortal' do
 
   # activity indicator
   #pod 'JGProgressHUD'
-  #pod 'PKHUD'
+  pod 'PKHUD'
 
   # custom UI
   pod 'Eureka'
